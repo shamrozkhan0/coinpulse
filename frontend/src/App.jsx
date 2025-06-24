@@ -10,6 +10,8 @@ function App() {
       <div className="h-16 w-50 rounded-full bg-blue-600"></div>
       <div className="h-16 w-50 rounded-full bg-red-500"></div>
     </div>
+
+
     </>
   )
 }
