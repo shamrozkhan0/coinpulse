@@ -1,10 +1,11 @@
 import express from "express";
-import { createUser , getAllUser } from "../controllers/UserController.js";
+import { signUp, getAllUser, login } from "../controllers/UserController.js";
 
 const router = express.Router();
 
 // This will create User
-router.post("/user", createUser);
+router.post("/signup", signUp);
+router.post("/login", login);
 
 // ============ Admin Routes =============
 
