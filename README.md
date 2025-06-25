@@ -10,4 +10,6 @@ Coinpulse uses APIs to fetch the latest news about cryptocurrencies, analyzes th
 - AI: Gemini API
 
 ## Coinpulse UI/UX:
+![coinpulse ui](./frontend/public/thumbnail.png)
 ![coinpulse ui](./frontend/public/coinpulse.png)
+
