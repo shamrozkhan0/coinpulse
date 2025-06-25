@@ -5,9 +5,8 @@ const findByEmail = async (email) => User.findOne({ email });
 
 
 
-
 export const signUp = async (req, res) => {
-    console.log(req)
+    console.log(req.body)
     const { name, email, password, image } = req.body;
 
     if (!name || !email || !password) {
@@ -34,7 +33,6 @@ export const signUp = async (req, res) => {
         return res.status(500).json({ success: false, message: error.message });
     }
 };
-
 
 
 

@@ -1,16 +1,19 @@
 import jwt from "jsonwebtoken";
 
-export const protector = (req, res, next) => {
-    const token = req.header.authorization.split(" ")[1];
 
-    if (token)
-        return res
-            .status(404)
-            .json({
-                success: false,
-                message: "Authentication not found please try login",
-                redirect: "/auth/login",
-            });
+export const protector = (req, res, next) => {
+
+
+    const authHeaders = req.headers;
+
+    if (!authHeaders.authorization) {
+        return res.status(400).json({ success: false, message: "Something went wrong , relogin again", redirect: "/auth/login" })
+    }
+
+    const token = authHeaders.authorization.split(" ")[1];
+
+    console.log(`JWT Token: ${token} `)
+
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
