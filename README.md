@@ -13,3 +13,4 @@ Coinpulse uses APIs to fetch the latest news about cryptocurrencies, analyzes th
 ![coinpulse ui](./frontend/public/thumbnail.png)
 ![coinpulse ui](./frontend/public/coinpulse.png)
 
+### Design and Developed by shamroz khan 

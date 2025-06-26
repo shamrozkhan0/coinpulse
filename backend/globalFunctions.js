@@ -7,6 +7,7 @@
  */
 export const checkIfUserLogged = (req, res) =>{
     const isLogin = req.headers.authorization;
+    console.log(isLogin)
 
     if(!isLogin || !isLogin.startsWith("Bearer ")){
        return res.status(400).json({success:false , redirect: "/auth/login"})
