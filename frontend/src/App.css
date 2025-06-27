@@ -1,0 +1,15 @@
+
+@import "tailwindcss";
+
+
+body {
+    font-family: "Orbitron", sans-serif;
+    /* background: black; */
+}
+
+.heading-gradient {
+    background: linear-gradient(90deg, #FF9500, #F0F500);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
