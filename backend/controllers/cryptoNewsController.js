@@ -9,24 +9,28 @@ import Coin from "../models/coins.js";
  * @param res - Express response object
  * @returns Returns coin data as JSON response if fetches successfuly.
  */
-export const getCryptoCoin = async () => {
+export const getCryptoCoin = async (req, res) => {
   console.log("crypto function is called");
+
   try {
     const data = await fetchCoin();
-    const dataExist = await Coin.exists();
-    if (dataExist) {
-      await Coin.bulkWrite(data);
-    } else {
-      await Coin.insertMany(data);
-    }
-    console.log(data);
+
+    await Coin.deleteMany({});
+    await Coin.insertMany(data);
+
+    return res
+      .status(201)
+      .json({ message: "Coins updated successfully", coins: data });
   } catch (error) {
     console.error(`Fetching Coin Error: ${error}`);
+    return res.status(500).json({ message: error.message });
   }
 };
 
+// setInterval(getCryptoCoin, 50000);  Uncomment when backend is completed
 
-// setInterval(getCryptoCoin, 50000)
+
+
 
 /**
  * Fetches a random page of cryptocurrency market data from the CoinGecko API,
@@ -39,6 +43,7 @@ export const getCryptoCoin = async () => {
 const fetchCoin = async () => {
   const pageIndex = Math.floor(Math.random() * 10) + 1;
   const url = process.env.GECKO_API + pageIndex;
+  // console.log(`URL: ${url}`)
 
   const res = await fetch(url);
 
@@ -55,7 +60,6 @@ const fetchCoin = async () => {
 
   return filterData;
 };
-
 
 export const getAllCoins = async (req, res) => {
   try {
