@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { cryptoNews } from "../controllers/cryptoNewsController.js";
+import { getAllCoins, getCryptoCoin } from "../controllers/cryptoNewsController.js";
 
 const router = Router();
 
-router.get('/',  cryptoNews)
+router.get('/',  getCryptoCoin)
+router.get('/coins',  getAllCoins)
 
 export default router;

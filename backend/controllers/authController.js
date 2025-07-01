@@ -5,6 +5,13 @@ const findByEmail = async (email) => User.findOne({ email });
 
 
 
+/**
+ * Register user send JWT token
+ * 
+ * @param  req 
+ * @param  res 
+ * @returns 
+ */
 export const signUp = async (req, res) => {
     console.log(req.body)
     const { name, email, password, image } = req.body;
@@ -22,7 +29,7 @@ export const signUp = async (req, res) => {
             .status(409)
             .json({ success: false, message: " User already exist By Email " });
     try {
-        // In image cloudinary cdn will be inserted
+        // In "image" cloudinary cdn will be inserted
         const savedUser = await User.create({ name, email, password, image });
         const token = generateToken(savedUser);
         return res
@@ -36,6 +43,13 @@ export const signUp = async (req, res) => {
 
 
 
+/**
+ * Authenticate user and pass the JWT token
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 export const login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -64,22 +78,35 @@ export const login = async (req, res) => {
 
 
 
-export const getAllUser = async (req, res, next) => {
-    try {
-        const users = await User.find();
-        console.log(`Cokkie: ${req.cookies}`);
-        return res.status(201).json({ success: true, users });
-    } catch (error) {
-        return res.status(500).json({ success: false, message: error.message });
-    }
-};
-
-
-
+/**
+ * generate JWT token for the user who signup and login
+ * 
+ * @param  user 
+ * @returns 
+ */
 const generateToken = (user) => {
     return jwt.sign(
         { id: user._id, email: user.email, name: user.name },
         process.env.JWT_SECRET,
         { expiresIn: "7d" }
     );
+};
+
+
+
+/**
+ * It will fetch all the registered user from the database
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
+export const getAllUser = async (req, res) => {
+    try {
+        const users = await User.find();
+        return res.status(201).json({ success: true, users });
+    } catch (error) {
+        return res.status(500).json({ success: false, message: error.message });
+    }
 };

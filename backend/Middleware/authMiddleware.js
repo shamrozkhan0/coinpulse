@@ -1,8 +1,6 @@
 import jwt from "jsonwebtoken";
 
-
 export const protector = (req, res, next) => {
-
 
     const authHeaders = req.headers;
 
@@ -13,7 +11,6 @@ export const protector = (req, res, next) => {
     const token = authHeaders.authorization.split(" ")[1];
 
     console.log(`JWT Token: ${token} `)
-
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
