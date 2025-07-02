@@ -1,9 +1,12 @@
 import { Router } from "express";
-import { getAllCoins, getCryptoCoin } from "../controllers/cryptoNewsController.js";
+import { getAllCoins } from "../controllers/cryptoCoinController.js";
+import { getInputSearch } from "../controllers/cryptoNewsController.js";
 
 const router = Router();
 
-router.get('/',  getCryptoCoin)
+// Gets all crypto coin
 router.get('/coins',  getAllCoins)
+router.get('/search/:coin', getInputSearch)
+
 
 export default router;

@@ -14,7 +14,7 @@ app.use(express.json());
 // Authwnticaation Route
 app.use("/auth", authRoutes);
 
-// Crypto News Logic Route
+// Crypto  Logic Route
 app.use("/", coinRoute )
 
 
