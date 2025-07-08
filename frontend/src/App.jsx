@@ -14,32 +14,28 @@ function App() {
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
-    setTimeout(() => {
-      if (document.readyState === "complete") {
-        handleLoad();
-      } else {
-        window.addEventListener("load", handleLoad);
-      }
-    }, 1600);
+      setTimeout(() => {
+        if (document.readyState === "complete") {
+          handleLoad();
+        } else {
+          window.addEventListener("load", handleLoad);
+        }
+      }, 1600);
+
     return () => window.removeEventListener("load", handleLoad);
   }, []);
 
 
   useEffect(() => {
-    if (isloaded) {
-      console.log("isloaded beocme true")
-      const Timeout = setTimeout(() => {
-        setShowContent(true)
-      }, 300);
-
+    if (isloaded) {  
+      const Timeout = setTimeout( setShowContent(true), 300);
       return () => clearTimeout(Timeout)
-
     }
   }, [isloaded])
 
+  return  !showContent ? <Loader DOMLoaded={isloaded} /> : <ComponentsWrapper />; 
 
-
-  return <>{!showContent ? <Loader DOMLoaded={isloaded}  /> : <ComponentsWrapper/>}</>;
+  
 }
 
 export default App;
