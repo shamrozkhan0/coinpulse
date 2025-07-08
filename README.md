@@ -21,6 +21,9 @@
 ![coinpulse welcome page](/frontend/public/coinpulse-banner.gif)
 
 
+### Logo :
+![coinpulse ui](./frontend/public/coinpulse-icon.png) 
+
 ## Coinpulse UI/UX:
 ![coinpulse ui](./frontend/public/thumbnail-coinpule.png)
 ![coinpulse ui](./frontend/public/coinpulse-landing-page.png)
