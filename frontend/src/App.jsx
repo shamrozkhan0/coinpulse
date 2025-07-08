@@ -5,6 +5,7 @@ import './App.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import CoinCard from './Components/button';
 
 function App() {
   const typingInput = useRef(null);
@@ -72,9 +73,15 @@ function App() {
               </div>
             </motion.div>
 
+
           </div>
+
         </div>
+
       </div>
+
+
+
     </>
   )
 }
