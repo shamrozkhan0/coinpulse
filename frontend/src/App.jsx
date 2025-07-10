@@ -10,32 +10,36 @@ function App() {
   const [isloaded, setIsLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
-
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
-      setTimeout(() => {
-        if (document.readyState === "complete") {
-          handleLoad();
-        } else {
-          window.addEventListener("load", handleLoad);
-        }
-      }, 1600);
+    setTimeout(() => {
+      if (document.readyState === "complete") {
+        handleLoad();
+      } else {
+        window.addEventListener("load", handleLoad);
+      }
+    }, 1600);
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
 
 
+
   useEffect(() => {
-    if (isloaded) {  
-      const Timeout = setTimeout( setShowContent(true), 300);
+    if (isloaded) {
+      const Timeout = setTimeout(() => setShowContent(true), 600);
       return () => clearTimeout(Timeout)
     }
   }, [isloaded])
 
-  return  !showContent ? <Loader DOMLoaded={isloaded} /> : <ComponentsWrapper />; 
 
-  
+
+
+  // return <Loader DOMLoaded={isloaded} theme={theme}/>
+  // return <ComponentsWrapper theme={theme}/>
+
+  return showContent ? <ComponentsWrapper/> : <Loader DOMLoaded={isloaded}/>;
 }
 
 export default App;

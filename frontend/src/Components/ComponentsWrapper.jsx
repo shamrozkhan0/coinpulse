@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import HeavyImages from './HeavyImages'
+import { useState, useEffect } from 'react'
 
-const ComponentsWrapper = () => {
+// Website Components Imports 
+import Navbar from './Navbar';
+
+
+const ComponentsWrapper = ({ theme }) => {
 
     const [render, setRender] = useState(false);
 
+
     useEffect(() => {
-      const timeout = setTimeout(setRender(true), 100)
-    
-      return () => clearTimeout(timeout)
+        const timeout = setTimeout(() => setRender(true), 200);
+        return () => clearTimeout(timeout)
     }, [])
-    
+
 
     return (
-        <div className={`${ render ? "opacity-100" : "opacity-0"} transition-opacity ease-in-out duration-1500`}>
-            <h1>iqjweoidi</h1>
-            <HeavyImages />
+        <div className={`transition-opacity ease-in-out duration-800 h-screen ${theme ? "bg-black" : ""} ${render ? "opacity-100" : "opacity-0"}`}>
+            <Navbar/>
         </div>
     )
 }

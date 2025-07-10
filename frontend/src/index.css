@@ -1,1 +1,40 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/Roboto/static/Roboto-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/src/assets/fonts/Orbitron/static/Orbitron-Regular.ttf")
+    format("truetype");
+}
+
 @import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+.txt-gradient {
+  background: linear-gradient(90deg, #ff0 0%, #ff5900 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #ff0 0%, #ff5900 100%);
+}
+
+.ls-1{
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  .ls-1{
+    letter-spacing: 2px;
+  }
+  
+}

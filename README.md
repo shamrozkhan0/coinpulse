@@ -22,7 +22,7 @@
 
 
 ### Logo :
-![coinpulse ui](./frontend/public/coinpulse-icon.png) 
+![coinpulse ui](./frontend/public/logo.png) 
 
 ## Coinpulse UI/UX:
 ![coinpulse ui](./frontend/public/thumbnail-coinpule.png)
