@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 // Website Components Imports 
 import Navbar from './Navbar';
 
-
 const ComponentsWrapper = ({ theme }) => {
 
     const [render, setRender] = useState(false);

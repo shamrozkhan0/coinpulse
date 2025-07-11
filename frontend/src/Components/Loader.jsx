@@ -9,7 +9,7 @@ import DarkThemeButton from "./DarkThemeButton";
  * Interactive Loader shown to user until website is being loaded at the background
  */
 const Loader = ({ DOMLoaded }) => {
-  
+
   const typingInput = useRef(null);
 
   // Load Typed.js
@@ -61,7 +61,7 @@ const Loader = ({ DOMLoaded }) => {
             Status: developing
           </motion.p>
 
-          <DarkThemeButton />
+          <DarkThemeButton animation={true} />
         </div>
       </div>
     </div>

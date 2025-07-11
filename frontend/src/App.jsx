@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
 import ComponentsWrapper from "./Components/ComponentsWrapper";
 
+
 function App() {
 
   const [isloaded, setIsLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
+
+
 
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
@@ -19,7 +22,7 @@ function App() {
       } else {
         window.addEventListener("load", handleLoad);
       }
-    }, 1600);
+    }, 1700);
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
@@ -28,7 +31,7 @@ function App() {
 
   useEffect(() => {
     if (isloaded) {
-      const Timeout = setTimeout(() => setShowContent(true), 600);
+      const Timeout = setTimeout(() => setShowContent(true), 500);
       return () => clearTimeout(Timeout)
     }
   }, [isloaded])
@@ -37,9 +40,9 @@ function App() {
 
 
   // return <Loader DOMLoaded={isloaded} theme={theme}/>
-  // return <ComponentsWrapper theme={theme}/>
+  return <ComponentsWrapper />
 
-  return showContent ? <ComponentsWrapper/> : <Loader DOMLoaded={isloaded}/>;
+  // return showContent ? <ComponentsWrapper/> : <Loader DOMLoaded={isloaded}/>;
 }
 
 export default App;
