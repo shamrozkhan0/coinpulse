@@ -19,16 +19,16 @@ const Navbar = () => {
 
   return (
     <>
-      <AuthenticationModal visibility={handleModalBehaviour} />
+      <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} />
 
-      <header className="px-3 mt-8 fixed top-0 left-0 w-screen">
+      <header className={`px-3 mt-8 fixed top-0 left-0 w-screen ${showModal ? "z-[-1]" : "z-1"} `}>
         <nav className="container mx-auto flex justify-between">
           <Link to="/coinpulse/">
             {/* Link to main page */}
             <img
               src={WebsiteLogo}
               alt="Coinpulse - Cryptocurrency Tracker  logo"
-              className="w-50 sm:w-60"
+              className="w-50 sm:w-60" 
             />
           </Link>
 
@@ -46,9 +46,6 @@ const Navbar = () => {
     </>
   );
 };
-
-
-
 
 
 
