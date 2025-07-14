@@ -31,13 +31,12 @@ const Navbar = () => {
               className="w-50 sm:w-60" 
             />
           </Link>
-
           <div className="flex items-center gap-2">
             <DarkThemeButton animation={false} />
             <button
               onClick={handleModalBehaviour}
               className="bg-gradient text-white px-5 md:px-5 lg:px-10 py-2 rounded-3xl tracking-wider font-extrabold text-[18px] sm:text-[20px] ls-1 transform
-                          transition-all ease-in-out duration-300  hover:scale-x-85 origin-bottom">
+                          transition-all ease-in-out duration-300  hover:scale-x-85 origin-bottom cursor-pointer">
               Login
             </button>
           </div>
