@@ -1,5 +1,6 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, } from "react";
+import { ThemeProvider } from "./context/context";
 
 // Components Imports
 import Loader from "./Components/Loader";
@@ -12,7 +13,6 @@ function App() {
   const [showContent, setShowContent] = useState(false);
 
 
-
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
@@ -22,7 +22,7 @@ function App() {
       } else {
         window.addEventListener("load", handleLoad);
       }
-    }, 1700);
+    }, 1500);
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
@@ -36,13 +36,16 @@ function App() {
     }
   }, [isloaded])
 
-
-
-
   // return <Loader DOMLoaded={isloaded} theme={theme}/>
-  return <ComponentsWrapper />
+  // return <ComponentsWrapper />
 
-  // return showContent ? <ComponentsWrapper/> : <Loader DOMLoaded={isloaded}/>;
+  return (
+
+    <ThemeProvider>
+      {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
+    </ThemeProvider>
+
+  );
 }
 
 export default App;

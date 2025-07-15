@@ -15,8 +15,8 @@ const ComponentsWrapper = ({ theme }) => {
 
 
     return (
-        <div className={`transition-opacity ease-in-out duration-800 h-screen ${theme ? "bg-black" : ""} ${render ? "opacity-100" : "opacity-0"}`}>
-            <Navbar/>
+        <div className={`transition-opacity ease-in-out duration-800 h-screen w-screen ${render ? "opacity-100" : "opacity-0"}`}>
+            <Navbar />
         </div>
     )
 }

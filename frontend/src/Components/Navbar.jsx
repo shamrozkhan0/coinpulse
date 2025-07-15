@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import DarkThemeButton from "./DarkThemeButton";
 import AuthenticationModal from './AuthenticationModal';
 
+// framer-Motion Import
+import { motion} from 'framer-motion'
+
 const Navbar = () => {
 
   const loginModal = useRef(null)

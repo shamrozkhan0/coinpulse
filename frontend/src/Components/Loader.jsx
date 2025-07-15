@@ -24,8 +24,6 @@ const Loader = ({ DOMLoaded }) => {
     return () => typed.destroy();
   }, []);
 
-
-
   // Load Particles.js
   useEffect(() => {
     if (window.particlesJS) {
