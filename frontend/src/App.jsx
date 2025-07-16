@@ -1,10 +1,11 @@
-import "./App.css";
 import { useEffect, useState, } from "react";
 import { ThemeProvider } from "./context/context";
+import "./App.css";
 
 // Components Imports
 import Loader from "./Components/Loader";
 import ComponentsWrapper from "./Components/ComponentsWrapper";
+import MouseBall from './Features/MouseBall';
 
 
 function App() {
@@ -37,15 +38,15 @@ function App() {
   }, [isloaded])
 
   // return <Loader DOMLoaded={isloaded} theme={theme}/>
-  // return <ComponentsWrapper />
+  return <ThemeProvider><ComponentsWrapper /></ThemeProvider>
 
-  return (
+  // return (
 
-    <ThemeProvider>
-      {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
-    </ThemeProvider>
+  //   <ThemeProvider>
+  //     {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
+  //   </ThemeProvider>
 
-  );
+  // );
 }
 
 export default App;

@@ -17,8 +17,8 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
-.txt-gradient {
-  background: linear-gradient(90deg, #ff0 0%, #ff5900 100%);
+.text-gradient {
+  background: linear-gradient(90deg, #ff5900 0%,#ff0 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

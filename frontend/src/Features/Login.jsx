@@ -1,71 +1,59 @@
-import React from 'react'
-import { motion } from "framer-motion";
+import React, { useContext } from 'react'
+import { ThemeContext } from '../context/context';
+
 
 const Login = ({ setLogin, isVisible }) => {
+
+  const isDark = useContext(ThemeContext);
+
   return (
     <>
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={isVisible ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-        transition={{ ease: "easeInOut", duration: 0.5 }}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="Authenticate Yourself"
-        onClick={(e) => e.stopPropagation()}
-        className={` bg-white  shadow-2xl shadow-blue-200 rounded-3xl overflow-hidden
-            w-full max-w-[440px] h-full  max-h-[562px] `}
-      >
-        <div className="relative flex items-center justify-between flex-col py-10 px-6 gap-8 h-full w-full ">
-          <header>
-            <h1 className="font-roboto text-3xl  font-semibold text-center ">
-              Authenticate Yourself
-            </h1>
-          </header>
+      <header className=''>
+        <h1 className={`font-roboto text-3xl font-semibold text-center ${isDark ? "text-white" : "text-black"}`}>
+          Authenticate <span className='text-gradient'>Yourself</span>
+        </h1>
+      </header>
 
-          <div className="w-full">
-            <form action="" method="POST" className="">
-              <div className="flex flex-col items-start gap-7">
-
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="font-roboto border-b-1 border-black w-full p-2 outline-0 "
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Password"
-                  className="font-roboto border-b-1 border-black w-full p-2 outline-0 "
-                  required
-                />
-                <a
-                  href=""
-                  className="font-roboto text-end w-full text-blue-500 underline underline-offset-4 font-normal"
-                >
-                  Forget Password
-                </a>
-              </div>
-              <div className="flex flex-col items-start gap-5 pt-30">
-                <button
-                  type="submit"
-                  className="font-roboto bg-gradient w-full text-white py-2 rounded"
-                >
-                  Unlock Pulse
-                </button>
-                <p className="font-roboto text-end w-full flex items-center justify-end gap-1">
-                  Don't have an account?
-                  <button
-                    type="button"
-                    onClick={() => setLogin(false)}
-                    className="text-blue-500 underline underline-offset-4">
-                    Be a Member
-                  </button>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div >
-      </motion.div >
+      <form action="" method="POST" className="">
+        <div className="flex flex-col items-start gap-7">
+          <input
+            type="email"
+            placeholder="Email"
+            className={`font-roboto border-b-1 w-full p-2 outline-0 ${isDark ? "text-white border-white" : "text-black border-black"} `}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Password"
+            className={`font-roboto border-b-1 w-full p-2 outline-0 ${isDark ? "text-white border-white" : "text-black border-black"}`}
+            required
+          />
+          <a
+            href=""
+            className="font-roboto text-end w-full text-blue-500 underline underline-offset-4 font-normal"
+          >
+            Forget Password
+          </a>
+        </div>
+        <div className="flex flex-col items-start gap-5 pt-30">
+          <button
+            type="submit"
+            onClick={(e) => { e.preventDefault(); alert("Currently The backend is not hosted yet so the form is not wokring ") }}
+            className="font-roboto bg-gradient w-full text-white py-2 rounded cursor-pointer"
+          >
+            Access Pulse
+          </button>
+          <p className={`font-roboto text-end w-full  ${isDark ? "text-white" : "text-black"} flex items-center justify-end gap-1`}>
+            Don't have an account?
+            <button
+              type="button"
+              onClick={() => setLogin(false)}
+              className="text-blue-500 underline underline-offset-4 cursor-pointer cursor-pointer">
+              Be a Member
+            </button>
+          </p>
+        </div>
+      </form>
     </>
   )
 }

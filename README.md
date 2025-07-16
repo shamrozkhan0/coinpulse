@@ -1,13 +1,13 @@
-# Coinpulse: AI-Powered Crypto Trend Analyzer
-
-## The Future Pulse Of Crypto Trend
+# Coinpulse: Know Every beats of your coin
 
 ### 🔷 What is Coinpulse?
 
-### Coinpulse is your intelligent crypto **assistant** that analyzes the latest market news and delivers clear, data-driven insights — so you don’t waste time reading 100 headlines.
+🚀 An AI-Powered SaaS Web Application for both beginner and professional traders.
 
-### Built for both beginners and serious traders, Coinpulse simplifies crypto decision-making. 
-
+#
+### 🔍 How it works:
+When a user inputs a coin name (e.g., Bitcoin, Ethereum) , it fetches news from a trusted API related to that coin.
+The AI then analyzes the news and responds with the coin's trend with 88% accuracy✅.
 ##
 
 ###  Features:
@@ -27,7 +27,7 @@
 ## Coinpulse UI/UX:
 ![coinpulse ui](./frontend/public/thumbnail-coinpule.png)
 ![coinpulse ui](./frontend/public/coinpulse-landing-page.png)
-![coinpulse ui](./frontend/public/coinpulse-signup.png)
+![coinpulse ui](./frontend/public/auth.png)
 ![coinpulse ui](./frontend/public/up-rest-modal.png)
 
 ### Design and Developed by shamroz khan 😎
