@@ -7,14 +7,16 @@ const findByEmail = async (email) => User.findOne({ email });
 
 /**
  * Register user send JWT token
+ * This function port is localhost:8000:/signup
  * 
  * @param  req 
  * @param  res 
  * @returns 
  */
 export const signUp = async (req, res) => {
-    console.log(req.body)
-    const { name, email, password, image } = req.body;
+    console.log("Body: ", req.body);
+
+    const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
         return res
@@ -30,8 +32,8 @@ export const signUp = async (req, res) => {
             .json({ success: false, message: " User already exist By Email " });
     try {
         // In "image" cloudinary cdn will be inserted
-        const savedUser = await User.create({ name, email, password, image });
-        const token = generateToken(savedUser);
+        const savedUser = await User.create({ name, email, password });
+        const token = generateToken(savedUser); ``
         return res
             .status(201)
             .json({ success: true, message: name + " is created", token });

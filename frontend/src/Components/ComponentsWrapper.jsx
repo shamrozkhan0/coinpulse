@@ -4,34 +4,20 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import Navbar from './Navbar';
 import MouseBall from '../Features/MouseBall'
 import Blob from './Blob';
-import { MobileSizeContext } from '../context/context';
+import {TabletSizeContext } from '../context/context';
 
-const ComponentsWrapper = ({ theme }) => {
+const ComponentsWrapper = () => {
 
     const [render, setRender] = useState(false);
-    // const [isTabletSize, setIsTabletSize] = useState(window.innerWidth > 768) // By default we assume the screen is large
 
     const stickyElement = useRef(null);
-    const isTabletSize = useContext(MobileSizeContext) 
+    const isTabletSize = useContext(TabletSizeContext) 
 
 
     useEffect(() => {
         const timeout = setTimeout(() => setRender(true), 200);
         return () => clearTimeout(timeout)
     }, [])
-
-
-    // const handleResize = () => {
-    //     setIsTabletSize(window.innerWidth > 768);
-    // }
-
-
-    // useEffect(() => {
-    //     window.addEventListener("resize", handleResize);
-    //     console.log(isTabletSize)
-
-    //     return () => window.removeEventListener('resize', handleResize);
-    // }, [])
 
     return (
         <div

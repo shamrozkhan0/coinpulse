@@ -8,6 +8,7 @@ dotenv.config();
 const app = express();
 
 // This MiddleWare will allow application to use JSON
+app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
 
