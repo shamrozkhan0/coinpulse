@@ -10,8 +10,6 @@ import AuthenticationModal from './AuthenticationModal';
 
 
 const Navbar = forwardRef(function index(props, ref) {
-
-  // const loginModal = useRef(null)
   const [showModal, setShowModal] = useState(false);
 
   const handleModalBehaviour = () => {
@@ -22,18 +20,14 @@ const Navbar = forwardRef(function index(props, ref) {
 
   return (
     <>
-      {
-        showModal ? <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} /> : null
-      }
-
-      {/* <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} /> */}
-
+      {showModal ? <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} /> : null}
       <header className={`px-3 pt-8 w-screen ${showModal ? "z-[-1]" : "z-1"} `}>
         <nav className="container mx-auto flex justify-between">
           <Link to="/coinpulse/">
             {/* Link to main page */}
             <img
               src={WebsiteLogo}
+              loading="lazy"
               alt="Coinpulse - Cryptocurrency Tracker  logo"
               className="w-45 sm:w-60"
             />
@@ -43,14 +37,16 @@ const Navbar = forwardRef(function index(props, ref) {
             <motion.button
               ref={ref}
               onClick={handleModalBehaviour}
-              className=" bg-gradient text-white px-5 md:px-5 lg:px-10 py-2 rounded-3xl tracking-wider font-extrabold text-[18px] sm:text-[20px] ls-1 transform
-             transition-all ease-in-out duration-300 hover:scale-x-85 origin-bottom cursor-pointer">
+              className="bg-gradient-to-r from-red-500 to-orange-500 relative text-white px-10 py-2 text-xl rounded-full font-medium cursor-pointer hover:from-red-600 hover:to-orange-600 transition-all duration-200 shadow-lg"
+              //   className=" bg-gradient-to-r from-red-500 to-orange-500 text-white px-5 md:px-5 lg:px-10 py-2 rounded-3xl tracking-wider font-extrabold text-[18px] sm:text-[20px] ls-1 transform
+              //  transition-all ease-in-out duration-300 hover:scale-x-85 origin-bottom cursor-pointer">
+              >
               Login
             </motion.button>
 
-          </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header >
     </>
   );
 });

@@ -3,20 +3,24 @@ import { useState, useEffect, useRef, useContext } from 'react'
 // Website Components Imports 
 import Navbar from './Navbar';
 import MouseBall from '../Features/MouseBall'
-import Blob from './Blob';
+import Banner from './Banner';
+
+// Context Import
 import {TabletSizeContext } from '../context/context';
+import ButtonHover from './ButtonHover';
 
+/**
+ * This will render after the DOM is fully loaded
+ */
 const ComponentsWrapper = () => {
-
-    const [render, setRender] = useState(false);
-
     const stickyElement = useRef(null);
+    const [render, setRender] = useState(false);
     const isTabletSize = useContext(TabletSizeContext) 
 
 
     useEffect(() => {
-        const timeout = setTimeout(() => setRender(true), 200);
-        return () => clearTimeout(timeout)
+    const timeout = setTimeout(() => setRender(true), 200);
+    return () => clearTimeout(timeout)
     }, [])
 
     return (
@@ -26,6 +30,8 @@ const ComponentsWrapper = () => {
         >
            { !isTabletSize ?  <MouseBall stickyElement={stickyElement} /> : null}
             <Navbar ref={stickyElement} />
+            {/* <ButtonHover/> */}
+            <Banner/>
         </div>
     )
 }
