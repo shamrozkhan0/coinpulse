@@ -1,4 +1,4 @@
-import { useRef, useState, forwardRef } from "react";
+import { useState, forwardRef, useEffect } from "react";
 import WebsiteLogo from "../assets/images/svg/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -8,21 +8,20 @@ import { motion } from 'framer-motion';
 import DarkThemeButton from "./DarkThemeButton";
 import AuthenticationModal from './AuthenticationModal';
 
-
 const Navbar = forwardRef(function index(props, ref) {
   const [showModal, setShowModal] = useState(false);
 
   const handleModalBehaviour = () => {
-    console.log("function is called")
     setShowModal((prev) => !prev)
   }
 
 
   return (
     <>
-      {showModal ? <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} /> : null}
-      <header className={`px-3 pt-8 w-screen ${showModal ? "z-[-1]" : "z-1"} `}>
-        <nav className="container mx-auto flex justify-between">
+      <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} />
+
+      <header className={`flex items-center justify-center pt-8 w-full ${showModal ? "z-[-1]" : "z-1"} `}>
+        <nav className="container mx-auto flex items-center justify-between px-2">
           <Link to="/coinpulse/">
             {/* Link to main page */}
             <img
@@ -33,20 +32,18 @@ const Navbar = forwardRef(function index(props, ref) {
             />
           </Link>
           <div className="flex items-center gap-2">
-            {/* <DarkThemeButton animation={false} /> */}
             <motion.button
               ref={ref}
               onClick={handleModalBehaviour}
-              className="bg-gradient-to-r from-red-500 to-orange-500 relative text-white px-10 py-2 text-xl rounded-full font-medium cursor-pointer hover:from-red-600 hover:to-orange-600 transition-all duration-200 shadow-lg"
-              //   className=" bg-gradient-to-r from-red-500 to-orange-500 text-white px-5 md:px-5 lg:px-10 py-2 rounded-3xl tracking-wider font-extrabold text-[18px] sm:text-[20px] ls-1 transform
-              //  transition-all ease-in-out duration-300 hover:scale-x-85 origin-bottom cursor-pointer">
-              >
+              className="bg-gradient-to-r from-red-500 to-orange-500 relative text-white px-6 py-2 text-md sm:text-xl rounded-full font-medium cursor-pointer
+                       hover:from-red-600 hover:to-orange-600 transition-all duration-200 shadow-lg"
+            >
               Login
             </motion.button>
 
-        </div>
-      </nav>
-    </header >
+          </div>
+        </nav>
+      </header >
     </>
   );
 });

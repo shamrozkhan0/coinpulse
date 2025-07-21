@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../context/context';
-
+import {Input} from "@heroui/react";
 
 const Login = ({ setLogin, isVisible }) => {
 
   const isDark = useContext(ThemeContext);
+
+  console.log(`is visile ${isVisible}`)
 
   return (
     <>
@@ -48,7 +50,7 @@ const Login = ({ setLogin, isVisible }) => {
             <button
               type="button"
               onClick={() => setLogin(false)}
-              className="text-blue-500 underline underline-offset-4 cursor-pointer cursor-pointer">
+              className="text-blue-500 underline underline-offset-4 cursor-pointer">
               Be a Member
             </button>
           </p>

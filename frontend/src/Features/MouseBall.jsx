@@ -46,7 +46,7 @@ const CursorFollower = ({ stickyElement }) => {
   return (
     <motion.div
       animate={{ width: cursorSize, height: cursorSize }}
-      className=" bg-gradient rounded-full absolute top-0 left-0 z-[-9999] pointer-events-none shadow-2xl shadow-amber-600"
+      className=" bg-gradient rounded-full absolute top-0 left-0 z-[-10] pointer-events-none shadow-2xl shadow-amber-600"
       style={{ x: smoothX, y: smoothY, width: cursorSize, height: cursorSize }}
     />
   );

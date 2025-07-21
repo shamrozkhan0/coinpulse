@@ -1,4 +1,4 @@
-const Signup = ({ setLogin, isVisible }) => {
+const Signup = ({ setSignup, isVisible }) => {
   return (
     <>
           <header>
@@ -53,7 +53,7 @@ const Signup = ({ setLogin, isVisible }) => {
                   Already have an account?
                   <button
                     type="button"
-                    onClick={() => setLogin(true)}
+                    onClick={() => setSignup(true)}
                     className="text-blue-500 underline underline-offset-4 cursor-pointer"
                   >
                     Access pulse
