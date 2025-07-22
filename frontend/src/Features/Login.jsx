@@ -11,7 +11,7 @@ const Login = ({ setLogin, isVisible }) => {
   return (
     <>
       <header className=''>
-        <h1 className={`font-roboto text-3xl font-semibold text-center ${isDark ? "text-white" : "text-black"}`}>
+        <h1 className={`font-roboto text-3xl font-semibold text-center text-white`}>
           Authenticate <span className='text-gradient'>Yourself</span>
         </h1>
       </header>
@@ -21,13 +21,13 @@ const Login = ({ setLogin, isVisible }) => {
           <input
             type="email"
             placeholder="Email"
-            className={`font-roboto border-b-1 w-full p-2 outline-0 ${isDark ? "text-white border-white" : "text-black border-black"} `}
+            className={`font-roboto border-b-1 w-full p-2 outline-0 text-white border-white`}
             required
           />
           <input
             type="text"
             placeholder="Password"
-            className={`font-roboto border-b-1 w-full p-2 outline-0 ${isDark ? "text-white border-white" : "text-black border-black"}`}
+            className={`font-roboto border-b-1 w-full p-2 outline-0 text-white border-white`}
             required
           />
           <a
@@ -41,11 +41,11 @@ const Login = ({ setLogin, isVisible }) => {
           <button
             type="submit"
             onClick={(e) => { e.preventDefault(); alert("Currently The backend is not hosted yet so the form is not wokring ") }}
-            className="font-roboto bg-gradient w-full text-white py-2 rounded cursor-pointer"
+            className="font-roboto bg-secondary-gradient w-full text-white py-2 rounded cursor-pointer"
           >
             Access Pulse
           </button>
-          <p className={`font-roboto text-end w-full  ${isDark ? "text-white" : "text-black"} flex items-center justify-end gap-1`}>
+          <p className={`font-roboto text-end w-full text-white flex items-center justify-end gap-1`}>
             Don't have an account?
             <button
               type="button"

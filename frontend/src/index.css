@@ -18,8 +18,11 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
+body{
+  background-color: #03020A;
+}
+
 .text-gradient {
-  /* background: linear-gradient(90deg, #ff5900 0%,#ff0 100%); */
   background-image: linear-gradient(40deg,#FC3A2E,#ffbb00);
   background-clip: text;
   -webkit-background-clip: text;

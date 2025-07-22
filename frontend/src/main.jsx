@@ -6,9 +6,6 @@ import App from './App.jsx'
 
 
 const renderApplication = () => {
-
-
-
   createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <App />

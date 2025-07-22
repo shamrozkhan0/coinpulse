@@ -16,7 +16,7 @@ const Loader = ({ DOMLoaded }) => {
   useEffect(() => {
     const typed = new Typed(typingInput.current, {
       strings: ["coinpulse"],
-      typeSpeed: 50,
+      typeSpeed: 70,
       showCursor: false,
       loop: false,
     });
@@ -64,7 +64,7 @@ const Loader = ({ DOMLoaded }) => {
             Status: developing
           </motion.p>
 
-          <DarkThemeButton animation={true} />
+          {/* <DarkThemeButton animation={true} /> */}
         </div>
       </div>
     </div>

@@ -13,10 +13,10 @@ const DarkThemeButton = ({ animation }) => {
   // Apply theme on mount and on toggle
   useEffect(() => {
     if (theme) {
-      document.body.style.backgroundColor = "#1F1F1F";
+      // document.body.style.backgroundColor = "#1F1F1F";
       localStorage.setItem("theme", "dark");
     } else {
-      document.body.style.backgroundColor = "white";
+      // document.body.style.backgroundColor = "white";
       localStorage.setItem("theme", "light");
     }
   }, [theme]);

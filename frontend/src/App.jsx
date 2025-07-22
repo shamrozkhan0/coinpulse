@@ -23,7 +23,7 @@ function App() {
       } else {
         window.addEventListener("load", handleLoad);
       }
-    }, 1500);
+    }, 1600);
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
@@ -38,15 +38,13 @@ function App() {
   }, [isloaded])
 
   // return <Loader DOMLoaded={isloaded} theme={theme}/>
-  return <ThemeProvider><ComponentsWrapper /></ThemeProvider>
+  // return <ThemeProvider><ComponentsWrapper /></ThemeProvider>
 
-  // return (
-
-  //   <ThemeProvider>
-  //     {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
-  //   </ThemeProvider>
-
-  // );
+  return (
+    <ThemeProvider>
+      {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
+    </ThemeProvider>
+  );
 }
 
 export default App;

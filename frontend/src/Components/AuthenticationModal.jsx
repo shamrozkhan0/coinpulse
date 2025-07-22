@@ -23,11 +23,12 @@ const AuthenticationModal = ({ isVisible, onClose}) => {
     <>
       <div
       onClick={onClose}
-      className={`w-full h-full absolute top-0 left-0 bg-[#ffffff46] transition-all ease-in-out duration-500 flex items-center justify-center px-5
+      className={`w-full h-full absolute top-0 left-0 bg-[#ffffff48]  transition-all ease-in-out duration-400 flex items-center justify-center px-5
         ${isVisible
-          ? "backdrop-blur-md opacity-100 z-[99999] pointer-events-auto"
-          : "backdrop-blur-[0] opacity-0 z-[-2] pointer-events-none"
-        }`}
+          ? "backdrop-blur-sm opacity-100 z-[99999] pointer-events-auto"
+          : "backdrop-blur-none opacity-0 z-[-2] pointer-events-none"
+        }
+        `}
     >
       <motion.div
         initial={{ y: 100, opacity: 0, scale: 0.9 }}
@@ -37,23 +38,21 @@ const AuthenticationModal = ({ isVisible, onClose}) => {
         aria-modal="true"
         aria-labelledby="Authenticate Yourself"
         onClick={(e) => e.stopPropagation()}
-        className={`rounded-3xl overflow-hidden w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-white shadow-2xl shadow-blue-300`}
+        className={`rounded-3xl overflow-hidden w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-[] bg-[#03020ac4] border-2 border-blue-300 shadow-lg shadow-blue-300`}
       >
         <div className="relative grid grid-cols-12 h-full w-full">
           <div
-            className={`col-span-0 sm:col-span-5 ${!isMobile ? "relative" : ""
-              } flex items-center justify-between`}
+            className={`col-span-0 sm:col-span-5  relative  flex items-center justify-between`}
           >
             <img
               src={plantImage}
               alt="coinpulse - login and signup page decorations"
-              className={`absolute top-0 left-0 w-full ${isMobile ? "opacity-20" : ""
-                }`}
+              className={`absolute top-0 left-0 w-full opacity-50 `}
             />
 
             {!isMobile && (
               <h2
-                className={`text-black font-medium text-2xl sm:text-3xl md:text-4xl ps-6 ${isDark ? "text-white" : "text-black"
+                className={`font-medium text-2xl sm:text-3xl md:text-4xl ps-6 text-white 
                   }`}
               >
                 Get Your portfolio{" "}
@@ -68,8 +67,7 @@ const AuthenticationModal = ({ isVisible, onClose}) => {
             <img
               src={singlePlantImage}
               alt="coinpulse - login and signup page decorations"
-              className={`rotate-180 absolute -bottom-10 -left-10 w-full ${isMobile ? "opacity-40" : ""
-                }`}
+              className={`rotate-180 absolute -bottom-10 -left-10 w-full opacity-40`}
             />
           </div>
 
@@ -77,7 +75,7 @@ const AuthenticationModal = ({ isVisible, onClose}) => {
             {login ? (
               <Login setLogin={setLogin} isVisible={isVisible} />
             ) : (
-              <Signup setLogin={setLogin} isVisible={isVisible} />
+              <Signup setSignup={setLogin} isVisible={isVisible} />
             )}
           </div>
         </div>

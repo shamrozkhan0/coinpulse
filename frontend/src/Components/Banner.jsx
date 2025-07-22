@@ -8,7 +8,7 @@ const SearchBar = () => {
   return (
     <div
       // onClick={() => inputRef.current.focus()}
-      className="cursor-pointer border-1 border-white w-full max-w-270  rounded-full grid grid-cols-12 overflow-hidden">
+      className="cursor-pointer border-2 border-gray-500 w-full max-w-270  rounded-full grid grid-cols-12 overflow-hidden">
       <input ref={inputRef} type="text" placeholder='Type coin name eg:- bitcoin' className='col-span-10 sm:col-span-11 text-xl sm:text-2xl font-medium font-roboto outline-0 cursor-pointer ps-6 py-3 text-white placeholder:text-[#9c9c9c]' />
       <div className="col-span-2 sm:col-span-1 flex items-center justify-center transition-all duration-500 ease-in-out bg-gradient-to-r from-red-500 to-orange-500 rounded-full  hover:from-red-600 hover:to-orange-600">
         <FontAwesomeIcon icon={faMagnifyingGlass} className='text-2xl text-white ' />

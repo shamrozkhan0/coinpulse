@@ -2,7 +2,7 @@ const Signup = ({ setSignup, isVisible }) => {
   return (
     <>
           <header>
-            <h1 className="font-roboto text-3xl  font-semibold text-center ">
+            <h1 className="font-roboto text-3xl font-semibold text-center text-white ">
               Want To Be A <span className="text-gradient">Member</span> ?
             </h1>
           </header>
@@ -18,21 +18,21 @@ const Signup = ({ setSignup, isVisible }) => {
                   type="text"
                   placeholder="Username"
                   name="name"
-                  className="font-roboto border-b-1 border-black w-full p-2 outline-0 "
+                  className="font-roboto border-b-1 text-white border-white  w-full p-2 outline-0 "
                   required
                 />
                 <input
                   type="text"
                   placeholder="Email"
                   name="email"
-                  className="font-roboto border-b-1 border-black w-full p-2 outline-0 "
+                  className="font-roboto border-b-1 text-white border-white w-full p-2 outline-0 "
                   required
                 />
                 <input
                   type="text"
                   placeholder="Password"
                   name="password"
-                  className="font-roboto border-b-1 border-black w-full p-2 outline-0 "
+                  className="font-roboto border-b-1 text-white border-white w-full p-2 outline-0 "
                   required
                 />
               </div>
@@ -45,11 +45,11 @@ const Signup = ({ setSignup, isVisible }) => {
                       "Currently The backend is not hosted yet so the form is not wokring "
                     );
                   }}
-                  className="font-roboto bg-gradient w-full text-white py-2 rounded cursor-pointer"
+                  className="font-roboto bg-secondary-gradient w-full text-white py-2 rounded cursor-pointer"
                 >
                   Unlock Pulse
                 </button>
-                <p className="font-roboto text-end w-full flex items-center justify-end gap-1">
+                <p className="font-roboto text-end w-full flex items-center justify-end gap-1 text-white">
                   Already have an account?
                   <button
                     type="button"
