@@ -26,11 +26,11 @@ const ComponentsWrapper = () => {
     return (
         <div
             style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}
-            className={`relative h-screen w-screen transition-opacity ease-in-out duration-800 overflow-hidden px-2  
+            className={`relative h-screen w-screen transition-opacity ease-in-out  duration-800 overflow-hidden px-2  
            ${render ? "opacity-100" : "opacity-0"}`}
         >
-            {!isTabletSize ? <MouseBall stickyElement={stickyElement} /> : null}
-            <div className="z-[100]">
+            {/* {!isTabletSize ? <MouseBall stickyElement={stickyElement} /> : null} */}
+            <div className="">
                 <Navbar ref={stickyElement} />
                 <Banner />
             </div>

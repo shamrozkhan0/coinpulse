@@ -20,6 +20,7 @@
 
 body{
   background-color: #03020A;
+  /* cursor: none; */
 }
 
 .text-gradient {
@@ -40,6 +41,25 @@ body{
 .ls-1{
   letter-spacing: 3px;
 }
+
+/* CustomCursor.css */
+body {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none; /* 👈 must be here */
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+
 
 @media screen and (max-width: 640px) {
   .ls-1{

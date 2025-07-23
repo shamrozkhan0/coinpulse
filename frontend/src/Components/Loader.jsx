@@ -63,7 +63,6 @@ const Loader = ({ DOMLoaded }) => {
           >
             Status: developing
           </motion.p>
-
           {/* <DarkThemeButton animation={true} /> */}
         </div>
       </div>

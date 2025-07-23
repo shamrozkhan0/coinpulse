@@ -1,4 +1,4 @@
-import { useEffect, useState, } from "react";
+import { useEffect, useRef, useState, } from "react";
 import { ThemeProvider } from "./context/context";
 import "./App.css";
 
@@ -6,6 +6,7 @@ import "./App.css";
 import Loader from "./Components/Loader";
 import ComponentsWrapper from "./Components/ComponentsWrapper";
 import MouseBall from './Features/MouseBall';
+import CustomCursor from "./Features/CustomCursor";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <ThemeProvider>
+      <CustomCursor  />
       {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
     </ThemeProvider>
   );

@@ -3,6 +3,40 @@ import React, { useRef } from 'react'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+    const coinsData = [
+        {
+            "_id": "6863aeba880e10760331a63d",
+            "symbol": "bybit-staked-sol",
+            "name": "bbsol",
+            "image": "https://coin-images.coingecko.com/coins/images/40095/large/400x400.png?1725628094",
+            "priceChange": -1.1561,
+            "__v": 0
+        },
+        {
+            "_id": "6863aeba880e10760331a63e",
+            "symbol": "zksync",
+            "name": "zk",
+            "image": "https://coin-images.coingecko.com/coins/images/38043/large/ZKTokenBlack.png?1718614502",
+            "priceChange": -4.59816,
+            "__v": 0
+        },      
+]
+
+function test(data){
+  let num = 0
+  for (const coin of data) {
+    // console.log(coin)
+    console.log(num += 1 , coin.image)
+  }
+
+}
+
+test(coinsData)
+
+// console.log(coinsData[0].name)
+
 const SearchBar = () => {
   const inputRef = useRef(null)
   return (
@@ -17,17 +51,36 @@ const SearchBar = () => {
   )
 }
 
+// const CryptoCoins = (data) => {
+//   // console.log(props.name)
+//   console.log(data.map((coin)=> console.log(coin)))
+//   return (
+//     // <div className="">
+//     //   {
+        
+//     //   }
+//     // </div>
+//   )
+// }
+
+
 const Banner = () => {
   return (
     <section className=''>
-     <div className='container mx-auto flex flex-col items-center justify-center px-3 sm:px-10 xl:px-50 py-20 gap-20 '>
-       <div className="flex flex-col gap-10">
-        <h1 className='text-white text-2xl md:text-4xl lg:text-5xl font-roboto font-semibold text-start leading-snug '>Get AI-powered forecast - Just type a <span className='text-gradient'>coin name</span> and unlock insight</h1>
-        <p className='text-gray-500 font-roboto text-md xl:text-2xl text-start w-full'>Search any crypto to see real-time market trend predictions powered by AI.</p>
-      </div>
+      <div className='container mx-auto flex flex-col items-center justify-center px-3 sm:px-10 xl:px-50 py-20  gap-15 sm:gap-20 '>
+        <div className="flex flex-col gap-7 sm:gap-10">
+          <h1 className='text-white text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-roboto font-semibold text-start leading-snug '>Get AI-powered forecast - Just type a <span className='text-gradient'>coin name</span> and unlock insight</h1>
+          <p className='text-gray-500 font-roboto text-lg xl:text-2xl text-start w-full'>Search any crypto to see real-time market trend predictions powered by AI.</p>
+        </div>
 
-      <SearchBar />
-     </div>
+        <SearchBar />
+
+        <Swiper>
+          {/* <SwiperSlide><CryptoCoins props={coinsData} /></SwiperSlide> */}
+        </Swiper>
+
+
+      </div>
     </section>
   )
 }

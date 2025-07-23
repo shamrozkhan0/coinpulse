@@ -13,74 +13,80 @@ import plantImage from "../assets/images/plant.png";
 import singlePlantImage from "../assets/images/plant1.svg";
 
 
-const AuthenticationModal = ({ isVisible, onClose}) => {
+const AuthenticationModal = ({ isVisible, onClose }) => {
   const [login, setLogin] = useState(true);
-  const isDark = useContext(ThemeContext);
+  // const isDark = useContext(ThemeContext);
   const isMobile = useContext(MobileSizeContext);
 
 
   return (
     <>
-      <div
-      onClick={onClose}
-      className={`w-full h-full absolute top-0 left-0 bg-[#ffffff48]  transition-all ease-in-out duration-400 flex items-center justify-center px-5
-        ${isVisible
-          ? "backdrop-blur-sm opacity-100 z-[99999] pointer-events-auto"
-          : "backdrop-blur-none opacity-0 z-[-2] pointer-events-none"
-        }
-        `}
-    >
       <motion.div
-        initial={{ y: 100, opacity: 0, scale: 0.9 }}
-        animate={isVisible ? { y: 0, opacity: 1, scale: 1 } : { y: 100, opacity: 0, scale: 0.9 }}
+        onClick={onClose}
+        initial={{ opacity: 0, zIndex: -2 }}
+        animate={
+          isVisible
+            ? { opacity: 1, zIndex: 999 }
+            : { opacity: 0, zIndex: -2 }
+        }
         transition={{ ease: "easeInOut", duration: 0.3 }}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="Authenticate Yourself"
-        onClick={(e) => e.stopPropagation()}
-        className={`rounded-3xl overflow-hidden w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-[] bg-[#03020ac4] border-2 border-blue-300 shadow-lg shadow-blue-300`}
+        className={`
+    w-full h-full absolute top-0 left-0 flex items-center justify-center px-5
+    ${isVisible ? "backdrop-blur-md pointer-events-auto" : "backdrop-blur-none pointer-events-none"}
+  `}
       >
-        <div className="relative grid grid-cols-12 h-full w-full">
-          <div
-            className={`col-span-0 sm:col-span-5  relative  flex items-center justify-between`}
-          >
-            <img
-              src={plantImage}
-              alt="coinpulse - login and signup page decorations"
-              className={`absolute top-0 left-0 w-full opacity-50 `}
-            />
 
-            {!isMobile && (
-              <h2
-                className={`font-medium text-2xl sm:text-3xl md:text-4xl ps-6 text-white 
+        <motion.div
+          initial={{ y: 100, opacity: 0, scale: 0.9 }}
+          animate={isVisible ? { y: 0, opacity: 1, scale: 1 } : { y: 100, opacity: 0, scale: 0.9 }}
+          transition={{ ease: "easeInOut", duration: 0.2 }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="Authenticate Yourself"
+          onClick={(e) => e.stopPropagation()}
+          className={`rounded-3xl overflow-hidden w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-[] bg-[#03020ac4] border-2 border-blue-300 `}
+        >
+          <div className="relative grid grid-cols-12 h-full w-full">
+            <div
+              className={`col-span-0 sm:col-span-5 ${isMobile ? '' : 'relative'} flex items-center justify-between`}
+            >
+              <img
+                src={plantImage}
+                alt="coinpulse - login and signup page decorations"
+                className={`absolute top-0 right-0 w-full  ${isMobile ? "opacity-20" : "opacity-50"}`}
+              />
+
+              {!isMobile && (
+                <h2
+                  className={`font-medium text-2xl sm:text-3xl md:text-4xl ps-6 text-white 
                   }`}
-              >
-                Get Your portfolio{" "}
-                <ButtonHover Icon="💸">
-                  <span className="text-green-500 cursor-pointer">Green</span>
-                </ButtonHover>
+                >
+                  Get Your portfolio{" "}
+                  <ButtonHover Icon="💸">
+                    <span className="text-green-500 cursor-pointer">Green</span>
+                  </ButtonHover>
 
-                Again.
-              </h2>
-            )}
+                  Again.
+                </h2>
+              )}
 
-            <img
-              src={singlePlantImage}
-              alt="coinpulse - login and signup page decorations"
-              className={`rotate-180 absolute -bottom-10 -left-10 w-full opacity-40`}
-            />
+              <img
+                src={singlePlantImage}
+                alt="coinpulse - login and signup page decorations"
+                className={`rotate-180 absolute -bottom-10 -left-10 w-full ${isMobile ? "opacity-20" : "opacity-50"}`}
+              />
+            </div>
+
+            <div className="col-span-12 sm:col-span-7 flex flex-col justify-between py-10 px-6 w-full h-full z-10 ">
+              {login ? (
+                <Login setLogin={setLogin} isVisible={isVisible} />
+              ) : (
+                <Signup setSignup={setLogin} isVisible={isVisible} />
+              )}
+            </div>
           </div>
-
-          <div className="col-span-12 sm:col-span-7 flex flex-col justify-between py-10 px-6 w-full h-full z-10 ">
-            {login ? (
-              <Login setLogin={setLogin} isVisible={isVisible} />
-            ) : (
-              <Signup setSignup={setLogin} isVisible={isVisible} />
-            )}
-          </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </div>
     </>
 
   );
