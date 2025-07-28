@@ -1,4 +1,4 @@
-import { useState, forwardRef, useEffect } from "react";
+import { useState, forwardRef } from "react";
 import WebsiteLogo from "../assets/images/svg/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const Navbar = forwardRef(function index(props, ref) {
     <>
       <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} />
 
-      <header className={`flex items-center justify-center pt-8 w-full ${showModal ? "z-[-1]" : "z-1"} `}>
+      <header className={`flex items-center justify-center pt-8 w-full  ${showModal ? "z-[-1]" : "z-1"} `}>
         <nav className="container mx-auto flex items-center justify-between px-2">
           <Link to="/coinpulse/">
             {/* Link to main page */}

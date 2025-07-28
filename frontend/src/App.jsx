@@ -1,20 +1,20 @@
-import { useEffect, useRef, useState, } from "react";
+import { lazy, Suspense, useEffect, useRef, useState, } from "react";
 import { ThemeProvider } from "./context/context";
 import "./App.css";
 
 // Components Imports
 import Loader from "./Components/Loader";
-import ComponentsWrapper from "./Components/ComponentsWrapper";
 import MouseBall from './Features/MouseBall';
-import CustomCursor from "./Features/CustomCursor";
+const ComponentsWrapper = lazy(() => import("./Components/ComponentsWrapper"));
 
 
 function App() {
 
   const [isloaded, setIsLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const stickyElement = useRef(null);
 
-
+  
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
@@ -28,9 +28,8 @@ function App() {
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
-
-
-
+  
+  
   useEffect(() => {
     if (isloaded) {
       const Timeout = setTimeout(() => setShowContent(true), 500);
@@ -38,13 +37,11 @@ function App() {
     }
   }, [isloaded])
 
-  // return <Loader DOMLoaded={isloaded} theme={theme}/>
-  // return <ThemeProvider><ComponentsWrapper /></ThemeProvider>
-
   return (
     <ThemeProvider>
-      <CustomCursor  />
-      {showContent ? <ComponentsWrapper /> : <Loader DOMLoaded={isloaded} />}
+      {/* <MouseBall stickyElement={stickyElement} /> */}
+      <Loader DOMLoaded={isloaded} />
+      <ComponentsWrapper DOMLoaded={isloaded} stickyElement={stickyElement} />
     </ThemeProvider>
   );
 }

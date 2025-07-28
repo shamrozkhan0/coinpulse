@@ -21,19 +21,28 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
 
   return (
     <>
-      <motion.div
+      {/* <motion.div
         onClick={onClose}
-        initial={{ opacity: 0, zIndex: -2 }}
+        initial={{ opacity: 0 }}
         animate={
           isVisible
-            ? { opacity: 1, zIndex: 999 }
-            : { opacity: 0, zIndex: -2 }
+            ? { opacity: 1}
+            : { opacity: 0}
         }
-        transition={{ ease: "easeInOut", duration: 0.3 }}
+        transition={{all: true, ease: "easeInOut", duration: 0.3 }}
         className={`
     w-full h-full absolute top-0 left-0 flex items-center justify-center px-5
-    ${isVisible ? "backdrop-blur-md pointer-events-auto" : "backdrop-blur-none pointer-events-none"}
+    ${isVisible ? "backdrop-blur-xl pointer-events-auto z-[999]" : "backdrop-blur-[0] pointer-events-none z-[-2]"}
   `}
+      > */}
+
+      <div
+        onClick={onClose}
+        className={`w-full h-full absolute top-0 left-0  transition-all ease-in-out duration-500 flex items-center justify-center px-5
+        ${isVisible
+            ? "backdrop-blur-xl opacity-100 z-[99999] pointer-events-auto"
+            : "backdrop-blur-[0] opacity-0 z-[-2] pointer-events-none"
+          }`}
       >
 
         <motion.div
@@ -44,7 +53,7 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
           aria-modal="true"
           aria-labelledby="Authenticate Yourself"
           onClick={(e) => e.stopPropagation()}
-          className={`rounded-3xl overflow-hidden w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-[] bg-[#03020ac4] border-2 border-blue-300 `}
+          className={`rounded-3xl overflow-hidden absolute w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-[] bg-[#03020ac9] border-2 border-blue-300 `}
         >
           <div className="relative grid grid-cols-12 h-full w-full">
             <div
@@ -86,7 +95,7 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </>
 
   );

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js"; // TypedJS
 import { motion } from "framer-motion"; // Framer Motion imports
 
-// Components Imports
+//  Components Imports
 import DarkThemeButton from "./DarkThemeButton";
 
 /**
@@ -40,6 +40,7 @@ const Loader = ({ DOMLoaded }) => {
     }
   }, []);
 
+  console.log("DOm loaded " , DOMLoaded)
   
   return (
     <div
