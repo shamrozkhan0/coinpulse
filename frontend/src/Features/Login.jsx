@@ -6,7 +6,6 @@ const Login = ({ setLogin, isVisible }) => {
 
   const isDark = useContext(ThemeContext);
 
-  console.log(`is visile ${isVisible}`)
 
   return (
     <>
@@ -34,7 +33,7 @@ const Login = ({ setLogin, isVisible }) => {
             href=""
             className="font-roboto text-end w-full text-blue-500 underline underline-offset-4 font-normal"
           >
-            Forget Password
+            Forgot Password
           </a>
         </div>
         <div className="flex flex-col items-start gap-5 pt-30">

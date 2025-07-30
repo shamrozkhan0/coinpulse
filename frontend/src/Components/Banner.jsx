@@ -1,73 +1,12 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Marquee from 'react-fast-marquee'
-import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  FreeMode,
-  Thumbs,
-} from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import MarqueeData from '../assets/Data/Data.json'
 
-
-// Your component
-const coinsData = [
-  {
-    "_id": "6863aeba880e10760331a63d",
-    "symbol": "bybit-staked-sol",
-    "name": "bbsol",
-    "image": "https://coin-images.coingecko.com/coins/images/40095/large/400x400.png?1725628094",
-    "priceChange": -1.1561,
-    "__v": 0
-  },
-  {
-    "_id": "6863aeba880e10760331a63e",
-    "symbol": "zksync",
-    "name": "zk",
-    "image": "https://coin-images.coingecko.com/coins/images/38043/large/ZKTokenBlack.png?1718614502",
-    "priceChange": -4.59816,
-    "__v": 0
-  },
-  {
-    "_id": "6863aeba880e10760331a63f",
-    "symbol": "bitcoin",
-    "name": "btc",
-    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
-    "priceChange": 2.5,
-    "__v": 0
-  },
-  {
-    "_id": "6863aeba880e10760331a63f",
-    "symbol": "bitcoin",
-    "name": "btc",
-    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
-    "priceChange": 0.00,
-    "__v": 0
-  },
-  {
-    "_id": "6863aeba880e10760331a640",
-    "symbol": "ethereum",
-    "name": "eth",
-    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
-    "priceChange": 1.8,
-    "__v": 0
-  },
-  {
-    "_id": "6863aeba880e10760331a640",
-    "symbol": "ethereum",
-    "name": "eth",
-    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
-    "priceChange": 1.8,
-    "__v": 0
-  }
-]
 
 
 const SearchBar = () => {
@@ -126,50 +65,39 @@ const CryptoCoins = ({ data }) => {
   )
 }
 
-const Marquees = ()=>{
-  return(
-        <div className="relative w-full flex flex-col gap-5 py-10">
-          {/* Enhanced left blur effect */}
-          <div className="pointer-events-none absolute top-0 left-0 h-full w-24 z-30 bg-gradient-to-r from-black/30 via-black/15 to-transparent backdrop-blur-md rounded-r-3xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-r-3xl" />
+
+
+const Marquees = () => {
+  // const [coins, setCoins] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/coins")
+  //     .then(response => response.json())
+  //     .then(data => setCoins(data.coinsData))
+  //     .catch(err => console.error("Forget to pay the backend so he lefts me :)"));
+  // }, []);
+
+  return (
+    <div className="relative container mx-auto flex flex-col gap-5 py-10">
+      {/* <Marquee pauseOnHover={true} direction="right" loop={false} className="py-2">
+        {coins == ' ' ? MarqueeData : coins .map((data) => (
+          <div key={data._id} className="mx-4">
+            <CryptoCoins data={data} />
           </div>
-
-          {/* Enhanced right blur effect */}
-          {/* <div className="pointer-events-none absolute top-0 right-0 h-full w-24 z-30 bg-gradient-to-l from-black/30 via-black/15 to-transparent backdrop-blur-md rounded-l-3xl">
-            <div className="absolute inset-0 bg-gradient-to-l from-white/5 to-transparent rounded-l-3xl" />
-          </div> */}
-
-          {/* Marquees with enhanced styling */}
-          <Marquee pauseOnHover={true} direction="right" loop={false} className="py-2">
-            {coinsData.map((data) => (
-              <div key={data._id} className="mx-4">
-                <CryptoCoins data={data} />
-              </div>
-            ))}
-          </Marquee>
-
-          <Marquee pauseOnHover={true} direction="left" loop={false} className="py-2">
-            {coinsData.map((data) => (
-              <div key={data._id} className="mx-4">
-                <CryptoCoins data={data} />
-              </div>
-            ))}
-          </Marquee>
-        </div>
-
-  )
-}
+        ))}
+      </Marquee> */}
+    </div>
+  );
+};
 
 
 const Banner = () => {
   return (
     <section className=''>
+      <div className="absolute hidden md:block top-20 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute hidden ms:block bottom-20 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '-2s' }} />
 
-      {/* Floating background blobs */}
-      {/* <div className="absolute top-20 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" /> */}
-      {/* <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '-2s' }} /> */}
-
-      <div className='container mx-auto flex flex-col items-center justify-center px-3 sm:px-10 xl:px-50 py-20 gap-15 sm:gap-30 relative z-20'>
+      <div className='container mx-0 md:mx-auto flex flex-col items-center justify-center px-3 sm:px-10 xl:px-50 py-20 gap-15 sm:gap-30 relative z-20'>
 
         <div className="flex flex-col gap-7 sm:gap-10">
           <h1 className='text-white text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-roboto font-semibold text-start leading-snug drop-shadow-2xl'>
@@ -182,10 +110,10 @@ const Banner = () => {
 
         <SearchBar />
 
-    
 
 
       </div>
+        <Marquees/>
 
 
 

@@ -1,0 +1,50 @@
+ [
+  {
+    "_id": "6863aeba880e10760331a63d",
+    "symbol": "bybit-staked-sol",
+    "name": "bbsol",
+    "image": "https://coin-images.coingecko.com/coins/images/40095/large/400x400.png?1725628094",
+    "priceChange": -1.1561,
+    "__v": 0
+  },
+  {
+    "_id": "6863aeba880e10760331a63e",
+    "symbol": "zksync",
+    "name": "zk",
+    "image": "https://coin-images.coingecko.com/coins/images/38043/large/ZKTokenBlack.png?1718614502",
+    "priceChange": -4.59816,
+    "__v": 0
+  },
+  {
+    "_id": "6863aeba880e10760331a63f",
+    "symbol": "bitcoin",
+    "name": "btc",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
+    "priceChange": 2.5,
+    "__v": 0
+  },
+  {
+    "_id": "6863aeba880e10760331a63f",
+    "symbol": "bitcoin",
+    "name": "btc",
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
+    "priceChange": 0.00,
+    "__v": 0
+  },
+  {
+    "_id": "6863aeba880e10760331a640",
+    "symbol": "ethereum",
+    "name": "eth",
+    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
+    "priceChange": 1.8,
+    "__v": 0
+  },
+  {
+    "_id": "6863aeba880e10760331a640",
+    "symbol": "ethereum",
+    "name": "eth",
+    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
+    "priceChange": 1.8,
+    "__v": 0
+  }
+]

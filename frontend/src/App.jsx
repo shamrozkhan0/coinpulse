@@ -1,20 +1,21 @@
-import { lazy, Suspense, useEffect, useRef, useState, } from "react";
-import { ThemeProvider } from "./context/context";
+import { lazy, useContext, useEffect, useRef, useState, } from "react";
 import "./App.css";
 
 // Components Imports
 import Loader from "./Components/Loader";
 import MouseBall from './Features/MouseBall';
+import { MobileSizeContext } from "./context/context";
 const ComponentsWrapper = lazy(() => import("./Components/ComponentsWrapper"));
 
-
 function App() {
-
   const [isloaded, setIsLoaded] = useState(false);
-  const [showContent, setShowContent] = useState(false);
-  const stickyElement = useRef(null);
+  const [shouldRemoveLoader, setShouldRemoveLoader] = useState(false)
 
-  
+  const stickyElement = useRef(null);
+  const isTablet = useContext(MobileSizeContext)
+
+
+   
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
@@ -28,21 +29,36 @@ function App() {
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
+
+
+  useEffect(()=>{
+
+    if(!isloaded) return;
+
+    const removeLoader = () => setShouldRemoveLoader(true)
+
+    const removeTimeout = setTimeout(()=>{
+     removeLoader(); 
+    }, 300)
+    
+  },[isloaded])
+
+
   
-  
-  useEffect(() => {
-    if (isloaded) {
-      const Timeout = setTimeout(() => setShowContent(true), 500);
-      return () => clearTimeout(Timeout)
-    }
-  }, [isloaded])
+  // useEffect(() => {
+  //   if (isloaded) {
+  //     const Timeout = setTimeout(() => setShowContent(true), 500);
+  //     return () => clearTimeout(Timeout)
+  //   }
+  // }, [isloaded])
+
 
   return (
-    <ThemeProvider>
-      {/* <MouseBall stickyElement={stickyElement} /> */}
-      <Loader DOMLoaded={isloaded} />
+    <>
+      {isTablet ? null : <MouseBall stickyElement={stickyElement}/> }
+      {shouldRemoveLoader ? null : <Loader DOMLoaded={isloaded} />}
       <ComponentsWrapper DOMLoaded={isloaded} stickyElement={stickyElement} />
-    </ThemeProvider>
+    </>
   );
 }
 

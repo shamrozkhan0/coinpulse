@@ -33,20 +33,20 @@ const CursorFollower = ({ stickyElement }) => {
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMousePosition);
-    stickyElement.current.addEventListener("mouseover", mouseMount);
-    stickyElement.current.addEventListener("mouseleave", mouseDemount);
+    // stickyElement.current.addEventListener("mouseover", mouseMount);
+    // stickyElement.current.addEventListener("mouseleave", mouseDemount);
 
     return () => {
       window.removeEventListener("mousemove", handleMousePosition);
-      stickyElement.current.removeEventListener("mouseover", mouseMount);
-      stickyElement.current.removeEventListener("mouseleave", mouseDemount);
+      // stickyElement.current.removeEventListener("mouseover", mouseMount);
+      // stickyElement.current.removeEventListener("mouseleave", mouseDemount);
     };
   }, [mouseX, mouseY]);
 
   return (
     <motion.div
       animate={{ width: cursorSize, height: cursorSize }}
-      className=" bg-gradient rounded-full absolute top-0 left-0 z-[9] pointer-events-none shadow-2xl shadow-amber-600"
+      className="Cursor-attachment bg-gradient rounded-full absolute top-0 left-0 z-[9] pointer-events-none shadow-2xl shadow-amber-600"
       style={{ x: smoothX, y: smoothY, width: cursorSize, height: cursorSize }}
     />
   );

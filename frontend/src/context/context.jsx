@@ -10,11 +10,11 @@ export const MobileSizeContext = createContext();
 export const ThemeProvider = ({ children }) => {
 
   const [isDark, setIsDark] = useState(false); // false = light, true = dark
-  const [isTabletSize, setIsTabletSize] = useState(window.innerWidth < 768) // By default we assume the screen is large
+  const [isTabletSize, setIsTabletSize] = useState(window.innerWidth < 834) // By default we assume the screen is large
   const [isMobileSize, setIsMobileSize] = useState(window.innerWidth < 640)
 
   const handleTabletResize = () => {
-    setIsTabletSize(window.innerWidth < 768);
+    setIsTabletSize(window.innerWidth < 834);
   }
 
   const handleMobileResize = () => {
