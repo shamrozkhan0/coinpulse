@@ -23,7 +23,7 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
     <>
       <div
         onClick={onClose}
-        className={`w-full h-full flex items-center justify-center absolute top-0 left-0 transition-all ease-in-out duration-500 
+        className={`w-full h-full flex flex-col items-center justify-center absolute top-0 left-0 transition-all ease-in-out duration-500 
         ${isVisible
             ? "backdrop-blur-xl opacity-100 z-[99999] pointer-events-auto"
             : "backdrop-blur-[0] opacity-0 z-[-2] pointer-events-none"
@@ -38,7 +38,7 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
           aria-modal="true"
           aria-labelledby="Authenticate Yourself"
           onClick={(e) => e.stopPropagation()}
-          className={`rounded-3xl overflow-hidden absolute w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center  bg-[#03020ac9] border-2 border-blue-300 `}
+          className={`rounded-3xl overflow-hidden  w-full max-w-[800px] h-full max-h-[562px] bg-cover bg-center bg-white  border-2 border-blue-300 `}
         >
           <div className="relative grid grid-cols-12 h-full w-full">
             <div
@@ -47,12 +47,12 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
               <img
                 src={plantImage}
                 alt="coinpulse - login and signup page decorations"
-                className={`absolute top-0 right-0 w-full  ${isMobile ? "opacity-20" : "opacity-50"}`}
+                className={`absolute top-0 right-0 w-full  `}
               />
-
+{/* ${isMobile ? "opacity-20" : "opacity-50"} */}
               {!isMobile && (
                 <h2
-                  className={`font-medium text-2xl sm:text-3xl md:text-4xl ps-6 text-white 
+                  className={`font-medium text-2xl sm:text-3xl md:text-4xl ps-6 text-black
                   }`}
                 >
                   Get Your portfolio{" "}
@@ -60,14 +60,14 @@ const AuthenticationModal = ({ isVisible, onClose }) => {
                     <span className="text-green-500 cursor-pointer">Green</span>
                   </ButtonHover>
 
-                  Again.
+                  Again
                 </h2>
               )}
 
               <img
                 src={singlePlantImage}
                 alt="coinpulse - login and signup page decorations"
-                className={`rotate-180 absolute -bottom-10 -left-10 w-full ${isMobile ? "opacity-20" : "opacity-50"}`}
+                className={`rotate-180 absolute -bottom-10 -left-10 w-full`}
               />
             </div>
 

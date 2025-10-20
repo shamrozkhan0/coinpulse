@@ -10,7 +10,7 @@ const Login = ({ setLogin, isVisible }) => {
   return (
     <>
       <header className=''>
-        <h1 className={`font-roboto text-3xl font-semibold text-center text-white`}>
+        <h1 className={`font-roboto text-3xl font-semibold text-center text-black`}>
           Authenticate <span className='text-gradient'>Yourself</span>
         </h1>
       </header>
@@ -20,13 +20,13 @@ const Login = ({ setLogin, isVisible }) => {
           <input
             type="email"
             placeholder="Email"
-            className={`font-roboto border-b-1 w-full p-2 outline-0 text-white border-white`}
+            className={`font-roboto border-b-1 w-full p-2 outline-0 `}
             required
           />
           <input
             type="text"
             placeholder="Password"
-            className={`font-roboto border-b-1 w-full p-2 outline-0 text-white border-white`}
+            className={`font-roboto border-b-1 w-full p-2 outline-0`}
             required
           />
           <a

@@ -27,7 +27,7 @@ const ComponentsWrapper = ({ DOMLoaded, stickyElement }) => { // by default this
 
     return (
         <div
-            style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}
+            // style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}
             className={`relative w-screen h-screen transition-opacity ease-in-out duration-800  ${render ? "opacity-100" : "opacity-0"}  `}>
             {/* <div className="h-full"> */}
                 <Navbar ref={stickyElement} />

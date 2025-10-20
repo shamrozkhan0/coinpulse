@@ -26,8 +26,9 @@ The AI then analyzes the news and responds with the coin's trend with 88% accura
 
 ## Coinpulse UI/UX:
 ![coinpulse ui](./frontend/public/thumbnail-coinpule.png)
-![coinpulse ui](./frontend/public/coinpulse-landing-page.png)
-![coinpulse ui](./frontend/public/auth.png)
+![coinpulse ui](./frontend/public/banner.png)
+![coinpulse ui](./frontend/public/modal.png)
+<!-- ![coinpulse ui](./frontend/public/auth.png) -->
 ![coinpulse ui](./frontend/public/up-rest-modal.png)
 
 ### Design and Developed by shamroz khan 😎

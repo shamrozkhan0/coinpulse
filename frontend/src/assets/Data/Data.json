@@ -1,50 +1,242 @@
- [
+[
   {
-    "_id": "6863aeba880e10760331a63d",
-    "symbol": "bybit-staked-sol",
-    "name": "bbsol",
-    "image": "https://coin-images.coingecko.com/coins/images/40095/large/400x400.png?1725628094",
-    "priceChange": -1.1561,
+    "_id": "6889c13f87fa43a0b173a8e8",
+    "symbol": "curve-dao-token",
+    "name": "crv",
+    "image": "https://coin-images.coingecko.com/coins/images/12124/large/Curve.png?1696511967",
+    "priceChange": 0.16754,
     "__v": 0
   },
   {
-    "_id": "6863aeba880e10760331a63e",
-    "symbol": "zksync",
-    "name": "zk",
-    "image": "https://coin-images.coingecko.com/coins/images/38043/large/ZKTokenBlack.png?1718614502",
-    "priceChange": -4.59816,
+    "_id": "6889c13f87fa43a0b173a8e9",
+    "symbol": "usdt0",
+    "name": "usdt0",
+    "image": "https://coin-images.coingecko.com/coins/images/53705/large/usdt0.jpg?1737086183",
+    "priceChange": 0.10993,
     "__v": 0
   },
   {
-    "_id": "6863aeba880e10760331a63f",
-    "symbol": "bitcoin",
-    "name": "btc",
-    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
-    "priceChange": 2.5,
+    "_id": "6889c13f87fa43a0b173a8ea",
+    "symbol": "first-digital-usd",
+    "name": "fdusd",
+    "image": "https://coin-images.coingecko.com/coins/images/31079/large/FDUSD_icon_black.png?1731097953",
+    "priceChange": 0.10137,
     "__v": 0
   },
   {
-    "_id": "6863aeba880e10760331a63f",
-    "symbol": "bitcoin",
-    "name": "btc",
-    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png",
-    "priceChange": 0.00,
+    "_id": "6889c13f87fa43a0b173a8eb",
+    "symbol": "celestia",
+    "name": "tia",
+    "image": "https://coin-images.coingecko.com/coins/images/31967/large/tia.jpg?1696530772",
+    "priceChange": -7.47772,
     "__v": 0
   },
   {
-    "_id": "6863aeba880e10760331a640",
-    "symbol": "ethereum",
-    "name": "eth",
-    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
-    "priceChange": 1.8,
+    "_id": "6889c13f87fa43a0b173a8ec",
+    "symbol": "nexo",
+    "name": "nexo",
+    "image": "https://coin-images.coingecko.com/coins/images/3695/large/CG-nexo-token-200x200_2x.png?1730414360",
+    "priceChange": -0.90768,
     "__v": 0
   },
   {
-    "_id": "6863aeba880e10760331a640",
-    "symbol": "ethereum",
-    "name": "eth",
-    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png",
-    "priceChange": 1.8,
+    "_id": "6889c13f87fa43a0b173a8ed",
+    "symbol": "renzo-restaked-eth",
+    "name": "ezeth",
+    "image": "https://coin-images.coingecko.com/coins/images/34753/large/Ezeth_logo_circle.png?1713496404",
+    "priceChange": 0.21494,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8ee",
+    "symbol": "optimism",
+    "name": "op",
+    "image": "https://coin-images.coingecko.com/coins/images/25244/large/Optimism.png?1696524385",
+    "priceChange": -7.71198,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8ef",
+    "symbol": "polygon-bridged-usdt-polygon",
+    "name": "usdt",
+    "image": "https://coin-images.coingecko.com/coins/images/35023/large/USDT.png?1707233644",
+    "priceChange": -0.00053,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f0",
+    "symbol": "blockstack",
+    "name": "stx",
+    "image": "https://coin-images.coingecko.com/coins/images/2069/large/Stacks_Logo_png.png?1709979332",
+    "priceChange": -3.76287,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f1",
+    "symbol": "falcon-finance",
+    "name": "usdf",
+    "image": "https://coin-images.coingecko.com/coins/images/54558/large/ff_200_X_200.png?1740741076",
+    "priceChange": 0.04039,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f2",
+    "symbol": "solv-btc",
+    "name": "solvbtc",
+    "image": "https://coin-images.coingecko.com/coins/images/36800/large/solvBTC.png?1719810684",
+    "priceChange": -0.43425,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f3",
+    "symbol": "floki",
+    "name": "floki",
+    "image": "https://coin-images.coingecko.com/coins/images/16746/large/PNG_image.png?1696516318",
+    "priceChange": -4.90354,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f4",
+    "symbol": "fartcoin",
+    "name": "fartcoin",
+    "image": "https://coin-images.coingecko.com/coins/images/50891/large/fart.jpg?1729503972",
+    "priceChange": -6.42748,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f5",
+    "symbol": "jupiter-staked-sol",
+    "name": "jupsol",
+    "image": "https://coin-images.coingecko.com/coins/images/37482/large/jupsol.png?1714473916",
+    "priceChange": -1.90094,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f6",
+    "symbol": "wbnb",
+    "name": "wbnb",
+    "image": "https://coin-images.coingecko.com/coins/images/12591/large/binance-coin-logo.png?1696512401",
+    "priceChange": -3.44131,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f7",
+    "symbol": "immutable-x",
+    "name": "imx",
+    "image": "https://coin-images.coingecko.com/coins/images/17233/large/immutableX-symbol-BLK-RGB.png?1696516787",
+    "priceChange": -3.88758,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f8",
+    "symbol": "conflux-token",
+    "name": "cfx",
+    "image": "https://coin-images.coingecko.com/coins/images/13079/large/3vuYMbjN.png?1696512867",
+    "priceChange": -19.00187,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8f9",
+    "symbol": "the-graph",
+    "name": "grt",
+    "image": "https://coin-images.coingecko.com/coins/images/13397/large/Graph_Token.png?1696513159",
+    "priceChange": -3.28556,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8fa",
+    "symbol": "binance-bridged-usdc-bnb-smart-chain",
+    "name": "usdc",
+    "image": "https://coin-images.coingecko.com/coins/images/35220/large/USDC.jpg?1707919050",
+    "priceChange": -0.12492,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8fb",
+    "symbol": "pancakeswap-token",
+    "name": "cake",
+    "image": "https://coin-images.coingecko.com/coins/images/12632/large/pancakeswap-cake-logo_%281%29.png?1696512440",
+    "priceChange": -5.12642,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8fc",
+    "symbol": "sonic-3",
+    "name": "s",
+    "image": "https://coin-images.coingecko.com/coins/images/38108/large/200x200_Sonic_Logo.png?1734679256",
+    "priceChange": -3.81081,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8fd",
+    "symbol": "dogwifcoin",
+    "name": "wif",
+    "image": "https://coin-images.coingecko.com/coins/images/33566/large/dogwifhat.jpg?1702499428",
+    "priceChange": -6.21678,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8fe",
+    "symbol": "ethereum-name-service",
+    "name": "ens",
+    "image": "https://coin-images.coingecko.com/coins/images/19785/large/ENS.jpg?1727872989",
+    "priceChange": -2.08913,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a8ff",
+    "symbol": "paypal-usd",
+    "name": "pyusd",
+    "image": "https://coin-images.coingecko.com/coins/images/31212/large/PYUSD_Logo_%282%29.png?1696530039",
+    "priceChange": -0.00426,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a900",
+    "symbol": "arbitrum-bridged-wbtc-arbitrum-one",
+    "name": "wbtc",
+    "image": "https://coin-images.coingecko.com/coins/images/39532/large/wbtc.png?1722810336",
+    "priceChange": -0.6676,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a901",
+    "symbol": "saros-finance",
+    "name": "saros",
+    "image": "https://coin-images.coingecko.com/coins/images/34594/large/saros-token-logo.png?1705476813",
+    "priceChange": -1.73489,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a902",
+    "symbol": "pax-gold",
+    "name": "paxg",
+    "image": "https://coin-images.coingecko.com/coins/images/9519/large/paxgold.png?1696509604",
+    "priceChange": 0.104,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a903",
+    "symbol": "msol",
+    "name": "msol",
+    "image": "https://coin-images.coingecko.com/coins/images/17752/large/mSOL.png?1696517278",
+    "priceChange": -1.84535,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a904",
+    "symbol": "kaia",
+    "name": "kaia",
+    "image": "https://coin-images.coingecko.com/coins/images/39901/large/KAIA.png?1724734368",
+    "priceChange": -1.34937,
+    "__v": 0
+  },
+  {
+    "_id": "6889c13f87fa43a0b173a905",
+    "symbol": "lido-dao",
+    "name": "ldo",
+    "image": "https://coin-images.coingecko.com/coins/images/13573/large/Lido_DAO.png?1696513326",
+    "priceChange": -4.31072,
     "__v": 0
   }
 ]

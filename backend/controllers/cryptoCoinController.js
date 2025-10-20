@@ -18,7 +18,7 @@ export const getCryptoCoins = async () => {
     await Coin.insertMany(data); // insert all the fetched coin in database
 }
 
-setInterval(getCryptoCoins, 20000);  
+setInterval(getCryptoCoins, 40000);  
 
 
 

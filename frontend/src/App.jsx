@@ -3,7 +3,7 @@ import "./App.css";
 
 // Components Imports
 import Loader from "./Components/Loader";
-import MouseBall from './Features/MouseBall';
+// import MouseBall from './Features/MouseBall';
 import { MobileSizeContext } from "./context/context";
 const ComponentsWrapper = lazy(() => import("./Components/ComponentsWrapper"));
 
@@ -44,18 +44,10 @@ function App() {
   },[isloaded])
 
 
-  
-  // useEffect(() => {
-  //   if (isloaded) {
-  //     const Timeout = setTimeout(() => setShowContent(true), 500);
-  //     return () => clearTimeout(Timeout)
-  //   }
-  // }, [isloaded])
-
 
   return (
     <>
-      {isTablet ? null : <MouseBall stickyElement={stickyElement}/> }
+      {/* {isTablet ? null : <MouseBall stickyElement={stickyElement}/> } */}
       {shouldRemoveLoader ? null : <Loader DOMLoaded={isloaded} />}
       <ComponentsWrapper DOMLoaded={isloaded} stickyElement={stickyElement} />
     </>
