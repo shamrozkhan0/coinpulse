@@ -17,7 +17,7 @@ const SearchBar = () => {
   return (
     <>
    <div className="w-full flex align-center justify-center flex-col gap-2">
-     <div
+     <form 
       className="cursor-pointer bg-white/10 backdrop-blur-xl border border-white/20 w-full max-w-270 rounded-full grid grid-cols-12 overflow-hidden shadow-2xl shadow-black/20 relative group transition-all duration-300 hover:bg-white/15 hover:border-white/30">
 
       {/* Subtle glow effect */}
@@ -35,9 +35,9 @@ const SearchBar = () => {
         className="col-span-2 sm:col-span-1 flex items-center justify-center transition-all duration-500 ease-in-out bg-gradient-to-r from-red-500 to-orange-500 rounded-full hover:from-red-600 hover:to-orange-600 hover:shadow-lg hover:shadow-red-500/25 relative z-10">
         <FontAwesomeIcon icon={faMagnifyingGlass} className='text-2xl text-white' />
       </button>
-    </div>
+    </form>
     <div className="">
-      waiodw
+      {/* <span className='bg-black text-white px-3 py-2 rounded-2xl tracking-widest'>bitcoin</span> */}
     </div>
    </div>
   </>
@@ -51,7 +51,7 @@ const CryptoCoins = ({ data }) => {
 
   return (
     <div className="flex items-center justify-center rounded-full w-full px-2 mx-3 group">
-      <div className="flex items-center justify-center w-full gap-2 p-3 rounded-full cursor-grab bg-black/10 backdrop-blur-xl border border-black/20 hover:bg-black/15 hover:border-black/30
+      <div className="flex items-center justify-center w-full gap-1  p-2 rounded-full cursor-grab bg-black/10 backdrop-blur-xl border border-black/20 hover:bg-black/15 hover:border-black/30
                    transition-all duration-300 hover:shadow-xl hover:shadow-black/20 relative overflow-hidden">
 
         {/* Animated shimmer effect */}
@@ -62,7 +62,7 @@ const CryptoCoins = ({ data }) => {
         <img
           src={data.image}
           alt={data.name}
-          className='w-10 h-10 rounded-full relative z-10 ring-2 ring-white/20'
+          className='w-5 h-5 md:w-10 md:h-10 rounded-full relative z-10 ring-2 ring-white/20'
           onError={(e) => {
             e.target.src = 'https://via.placeholder.com/40x40/374151/ffffff?text=' + data.name.charAt(0).toUpperCase()
           }}
@@ -106,7 +106,7 @@ const Marquees = () => {
         loop={0}
         gradient={false}  
         speed={50}        
-        delay={0}         
+        delay={0}
       >
 
         {(coins && coins.length > 0 ? coins : MarqueeData).map((data) => (

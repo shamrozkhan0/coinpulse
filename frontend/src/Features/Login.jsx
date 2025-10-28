@@ -5,7 +5,7 @@ import {Input} from "@heroui/react";
 const Login = ({ setLogin, isVisible }) => {
 
   const isDark = useContext(ThemeContext);
-
+  const port = "http://localhost:5000"
 
   return (
     <>
@@ -15,15 +15,17 @@ const Login = ({ setLogin, isVisible }) => {
         </h1>
       </header>
 
-      <form action="" method="POST" className="">
+      <form action={`${port}/login`} method="POST" className="">
         <div className="flex flex-col items-start gap-7">
           <input
+            name='email'
             type="email"
             placeholder="Email"
             className={`font-roboto border-b-1 w-full p-2 outline-0 `}
             required
           />
           <input
+            name='password'
             type="text"
             placeholder="Password"
             className={`font-roboto border-b-1 w-full p-2 outline-0`}
@@ -39,12 +41,12 @@ const Login = ({ setLogin, isVisible }) => {
         <div className="flex flex-col items-start gap-5 pt-30">
           <button
             type="submit"
-            onClick={(e) => { e.preventDefault(); alert("Currently The backend is not hosted yet so the form is not wokring ") }}
+            // onClick={(e) => { e.preventDefault(); alert("Currently The backend is not hosted yet so the form is not wokring ") }}
             className="font-roboto bg-secondary-gradient w-full text-white py-2 rounded cursor-pointer"
           >
             Access Pulse
           </button>
-          <p className={`font-roboto text-end w-full text-white flex items-center justify-end gap-1`}>
+          <p className={`font-roboto text-end w-full  flex items-center justify-end gap-1`}>
             Don't have an account?
             <button
               type="button"

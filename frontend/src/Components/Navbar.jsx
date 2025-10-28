@@ -35,7 +35,7 @@ const Navbar = forwardRef(function index(props, ref) {
             <motion.button
               ref={ref}
               onClick={handleModalBehaviour}
-              className="bg-gradient-to-r from-red-500 to-orange-500 relative text-white px-6 py-2 text-md sm:text-xl rounded-full font-medium cursor-pointer
+              className="bg-gradient-to-r from-red-500 to-orange-500 relative text-white px-6 py-2 text-sm sm:text-xl rounded-full font-medium cursor-pointer
                        hover:from-red-600 hover:to-orange-600 transition-all duration-200 shadow-lg"
             >
               Login
