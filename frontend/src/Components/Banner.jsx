@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useNavigate } from 'react-router-dom';
 
 import Marquee from 'react-fast-marquee'
 
 import MarqueeData from '../assets/Data/Data.json'
+import { Link } from 'react-router-dom';
 
 const createTag = (val) => {
   console.log(val)
@@ -13,36 +15,87 @@ const createTag = (val) => {
 
 
 const SearchBar = () => {
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const coin = inputRef.current?.value.trim();
+    if (!coin) {
+      alert("Write a crypto name");
+      return;
+    }
+    navigate(`/prompt?coin=${encodeURIComponent(coin)}`);
+  };
+
   return (
-    <>
-   <div className="w-full flex align-center justify-center flex-col gap-2">
-     <form 
-      className="cursor-pointer bg-white/10 backdrop-blur-xl border border-white/20 w-full max-w-270 rounded-full grid grid-cols-12 overflow-hidden shadow-2xl shadow-black/20 relative group transition-all duration-300 hover:bg-white/15 hover:border-white/30">
+    <div className="w-full flex align-center justify-center flex-col gap-2">
+      <form
+        onSubmit={handleSearch} // handle Enter key
+        className="cursor-pointer bg-white/10 backdrop-blur-xl border border-white/20 w-full max-w-270 rounded-full grid grid-cols-12 overflow-hidden shadow-2xl shadow-black/20 relative group transition-all duration-300 hover:bg-white/15 hover:border-white/30"
+      >
+        {/* Subtle glow effect */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Type coin name eg:- bitcoin"
+          className="col-span-10 sm:col-span-11 text-xl sm:text-2xl font-medium font-roboto outline-0 cursor-pointer ps-6 py-3 placeholder:text-black/60 bg-transparent relative z-10"
+        />
 
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder='Type coin name eg:- bitcoin'
-        onKeyDown={(e)=>{if (e.code === "Enter"){createTag(inputRef.current.value)}}}
-        className='col-span-10 sm:col-span-11 text-xl sm:text-2xl font-medium font-roboto outline-0 cursor-pointer ps-6 py-3  placeholder:text-black/60 bg-transparent relative z-10'
-      />
-
-      <button 
-        className="col-span-2 sm:col-span-1 flex items-center justify-center transition-all duration-500 ease-in-out bg-gradient-to-r from-red-500 to-orange-500 rounded-full hover:from-red-600 hover:to-orange-600 hover:shadow-lg hover:shadow-red-500/25 relative z-10">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className='text-2xl text-white' />
-      </button>
-    </form>
-    <div className="">
-      {/* <span className='bg-black text-white px-3 py-2 rounded-2xl tracking-widest'>bitcoin</span> */}
+        <button
+          type="submit"
+          className="col-span-2 sm:col-span-1 flex items-center justify-center transition-all duration-500 ease-in-out bg-gradient-to-r from-red-500 to-orange-500 rounded-full hover:from-red-600 hover:to-orange-600 hover:shadow-lg hover:shadow-red-500/25 relative z-10"
+        >
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-2xl text-white" />
+        </button>
+      </form>
     </div>
-   </div>
-  </>
-  )
-}
+  );
+};
+
+// const SearchBar = () => {
+//   const inputRef = useRef(null)
+//   return (
+//     <>
+//       <div className="w-full flex align-center justify-center flex-col gap-2">
+//         <form
+//           className="cursor-pointer bg-white/10 backdrop-blur-xl border border-white/20 w-full max-w-270 rounded-full grid grid-cols-12 overflow-hidden shadow-2xl shadow-black/20 relative group transition-all duration-300 hover:bg-white/15 hover:border-white/30">
+
+//           {/* Subtle glow effect */}
+//           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+//           <input
+//             ref={inputRef}
+//             type="text"
+//             placeholder='Type coin name eg:- bitcoin'
+//             onKeyDown={(e) => { if (e.code === "Enter") { createTag(inputRef.current.value) } }}
+//             className='col-span-10 sm:col-span-11 text-xl sm:text-2xl font-medium font-roboto outline-0 cursor-pointer ps-6 py-3  placeholder:text-black/60 bg-transparent relative z-10'
+//           />
+
+//           <Link
+//             onClick={(e) => {
+//               const coin = inputRef.current?.value.trim();
+//               if (!coin) {
+//                 e.preventDefault(); // stop navigation
+//                 alert("Write a crypto name");
+//               }
+//             }}
+//             to={`/prompt?coin=${encodeURIComponent(inputRef.current?.value.trim() || "")}`}
+//             className="col-span-2 sm:col-span-1 flex items-center justify-center transition-all duration-500 ease-in-out bg-gradient-to-r from-red-500 to-orange-500 rounded-full hover:from-red-600 hover:to-orange-600 hover:shadow-lg hover:shadow-red-500/25 relative z-10"
+//           >
+//             <FontAwesomeIcon icon={faMagnifyingGlass} className="text-2xl text-white" />
+//           </Link>
+
+//         </form>
+//         <div className="">
+//           {/* <span className='bg-black text-white px-3 py-2 rounded-2xl tracking-widest'>bitcoin</span> */}
+//         </div>
+//       </div>
+//     </>
+//   )
+// }
 
 
 const CryptoCoins = ({ data }) => {
@@ -104,8 +157,8 @@ const Marquees = () => {
         pauseOnHover
         direction="right"
         loop={0}
-        gradient={false}  
-        speed={50}        
+        gradient={false}
+        speed={50}
         delay={0}
       >
 
@@ -125,8 +178,8 @@ const Banner = () => {
   return (
     <section className=''>
       <div className="absolute hidden md:block top-20 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute hidden ms:block bottom-20 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" 
-          style={{ animationDelay: '-2s' }} />
+      <div className="absolute hidden ms:block bottom-20 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: '-2s' }} />
 
       <div className='container mx-0 md:mx-auto flex flex-col items-center justify-center px-3 sm:px-10 xl:px-50 py-20 gap-15 sm:gap-30 relative z-20'>
 

@@ -21,7 +21,7 @@ const Navbar = forwardRef(function index(props, ref) {
       <AuthenticationModal isVisible={showModal} onClose={handleModalBehaviour} />
 
       <header className={`flex items-center justify-center pt-8 w-full  ${showModal ? "z-[-1]" : "z-1"} `}>
-        <nav className="container mx-auto flex items-center justify-between px-2">
+        <nav className="container mx-auto flex items-center justify-center px-2">
           <Link to="/coinpulse/">
             {/* Link to main page */}
             <img
@@ -31,7 +31,7 @@ const Navbar = forwardRef(function index(props, ref) {
               className="w-45 sm:w-60"
             />
           </Link>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <motion.button
               ref={ref}
               onClick={handleModalBehaviour}
@@ -41,7 +41,7 @@ const Navbar = forwardRef(function index(props, ref) {
               Login
             </motion.button>
 
-          </div>
+          </div> */}
         </nav>
       </header >
     </>

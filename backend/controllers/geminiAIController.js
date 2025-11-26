@@ -1,51 +1,27 @@
-import { getCryptoNewsByCoin } from "./cryptoNewsController.js";
+import OpenAI from "openai";
+import dotenv from "dotenv";
+dotenv.config();
 
-export const getAiResponse = async (req, res) => {
+const openai = new OpenAI({
+  apiKey: process.env.GPT_API_KEY,    
+});
 
-  const { newsdata, coinname } = req.body;
-
-  const aiContent = `Crypto coin: ${coinname}. News headlines: ${newsdata}`;
-  console.log("TITLE: " + aiContent)
-
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.AI_API_KEY}`,
-        "Content-Type": "application/json"
+export async function askGPT({ coinName }) {
+  console.log(coinName)
+// return coinName;
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      {
+        role: "system",
+        content: " You are a confident crypto expert.  Analyze the provided coin name and give a clear investment verdict. Your response must: Start with either \“YES — this coin is good to buy\” or \“NO — this coin is not recommended”.Then write a short paragraph explaining your reasoning. Do not ask the user questions. Do not depend on user preferences. Speak confidently, as if giving a strong professional opinion.Keep the explanation simple, friendly, and easy to understand."
       },
-      body: JSON.stringify({
-        model: "google/gemini-2.0-flash-exp:free",
-        messages: [
-          {
-            role: "system",
-            content: process.env.AI_ROLE,
-          },
-          {
-            role: "user",
-            content: aiContent,
-          }
-        ] 
-      })
-    });
+      {
+        role: "user",
+        content: `Coin name: ${coinName}`
+      }
+    ]
+  });
 
-    const resetUnix = response.headers.get("x-ratelimit-reset");
-    if (resetUnix) {
-      const resetTime = new Date(parseInt(resetUnix) * 1000);
-      console.log(`Rate limit will reset at: ${resetTime.toLocaleTimeString()}`);
-    }
-
-
-    if (response.status == 429) {
-      return res.status(401).json({ message: "Our API is taking a short nap. Please try again in a few moments." });
-    }
-
-    const data = await response.json();
-    const aiResponse = data.choices[0].message.content;
-    return res.status(200).json({ news: newsdata, message: aiResponse })
-  } catch (error) {
-    console.error("Error", error.message)
-  }
-
-
-} 
+  return completion.choices[0].message.content;
+}

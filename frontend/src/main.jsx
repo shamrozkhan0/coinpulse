@@ -6,7 +6,7 @@ import './index.css';
 
 createRoot(document.getElementById('root')).render(
 <ThemeProvider>
-   <BrowserRouter>
+   <BrowserRouter basename='/coinpulse'>
      <App />
    </BrowserRouter>
 </ThemeProvider>

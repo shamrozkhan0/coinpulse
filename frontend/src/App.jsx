@@ -1,13 +1,29 @@
 import { lazy, useContext, useEffect, useRef, useState, } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-// Components Imports
+import Prompt from "./Components/Prompt";
 import Loader from "./Components/Loader";
-// import MouseBall from './Features/MouseBall';
+
 import { MobileSizeContext } from "./context/context";
 const ComponentsWrapper = lazy(() => import("./Components/ComponentsWrapper"));
 
 function App() {
+  return (
+    <>
+      {/* <LandingPage/> */}
+      {/* <BrowserRouter basename="/coinpulse/"> */}
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/prompt" element={<Prompt />} />
+        </Routes>
+      {/* </BrowserRouter> */}
+
+    </>
+  )
+}
+
+const LandingPage = () => {
   const [isloaded, setIsLoaded] = useState(false);
   const [shouldRemoveLoader, setShouldRemoveLoader] = useState(false)
 
@@ -15,7 +31,7 @@ function App() {
   const isTablet = useContext(MobileSizeContext)
 
 
-   
+
   useEffect(() => {
     const handleLoad = () => setIsLoaded(true);
 
@@ -31,27 +47,23 @@ function App() {
   }, []);
 
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    if(!isloaded) return;
+    if (!isloaded) return;
 
     const removeLoader = () => setShouldRemoveLoader(true)
 
-    const removeTimeout = setTimeout(()=>{
-     removeLoader(); 
+    const removeTimeout = setTimeout(() => {
+      removeLoader();
     }, 300)
-    
-  },[isloaded])
 
-
-
+  }, [isloaded])
   return (
     <>
-      {/* {isTablet ? null : <MouseBall stickyElement={stickyElement}/> } */}
       {shouldRemoveLoader ? null : <Loader DOMLoaded={isloaded} />}
       <ComponentsWrapper DOMLoaded={isloaded} stickyElement={stickyElement} />
     </>
-  );
+  )
 }
 
 export default App;
